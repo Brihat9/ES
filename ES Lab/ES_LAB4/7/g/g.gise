@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<generated_project xmlns="http://www.xilinx.com/XMLSchema" xmlns:xil_pn="http://www.xilinx.com/XMLSchema">
+
+  <!--                                                          -->
+
+  <!--             For tool use only. Do not edit.              -->
+
+  <!--                                                          -->
+
+  <!-- ProjectNavigator created generated project file.         -->
+
+  <!-- For use in tracking generated file and other information -->
+
+  <!-- allowing preservation of process status.                 -->
+
+  <!--                                                          -->
+
+  <!-- Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved. -->
+
+  <version xmlns="http://www.xilinx.com/XMLSchema">11.1</version>
+
+  <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="g.xise"/>
+
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="add_sub.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="add_sub.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="add_sub.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="add_sub.ngr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="add_sub.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="add_sub.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="add_sub.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="add_sub.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="add_sub_tb_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="add_sub_tb_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="add_sub_tb_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="add_sub_tb_stx_beh.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="add_sub_vhdl.prj"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="add_sub_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
+  </files>
+
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1470195899" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1470195899">
+      <status xil_pn:value="SuccessfullyRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1470198946" xil_pn:in_ck="1134120172154295257" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1470198946">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="../add_sub_structural.vhd"/>
+      <outfile xil_pn:name="../add_sub_tb.vhd"/>
+      <outfile xil_pn:name="../full_adder.vhd"/>
+      <outfile xil_pn:name="../xor1.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1470195899" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="5092018187822898666" xil_pn:start_ts="1470195899">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1470195899" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="1616634454528100082" xil_pn:start_ts="1470195899">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1470195899" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="2640527079406386515" xil_pn:start_ts="1470195899">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1470198949" xil_pn:in_ck="1134120172154295257" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1470198949">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="../add_sub_structural.vhd"/>
+      <outfile xil_pn:name="../add_sub_tb.vhd"/>
+      <outfile xil_pn:name="../full_adder.vhd"/>
+      <outfile xil_pn:name="../xor1.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1470198954" xil_pn:in_ck="1134120172154295257" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="6665302259336404037" xil_pn:start_ts="1470198949">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="add_sub_tb_beh.prj"/>
+      <outfile xil_pn:name="add_sub_tb_isim_beh.exe"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
+    </transform>
+    <transform xil_pn:end_ts="1470198954" xil_pn:in_ck="-4444551594350125898" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="4786694882764411730" xil_pn:start_ts="1470198954">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="add_sub_tb_isim_beh.wdb"/>
+      <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
+    </transform>
+    <transform xil_pn:end_ts="1470194989" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1470194989">
+      <status xil_pn:value="SuccessfullyRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1470194989" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="7254979468191792953" xil_pn:start_ts="1470194989">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1470194989" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="2640527079406386515" xil_pn:start_ts="1470194989">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1470194989" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1470194989">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1470194989" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="5314035118787178257" xil_pn:start_ts="1470194989">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1470194989" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="9102341965431189672" xil_pn:start_ts="1470194989">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1470194989" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="6328264395813106973" xil_pn:start_ts="1470194989">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1470194997" xil_pn:in_ck="213467299896149815" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="5641277813563322478" xil_pn:start_ts="1470194989">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="add_sub.lso"/>
+      <outfile xil_pn:name="add_sub.ngc"/>
+      <outfile xil_pn:name="add_sub.ngr"/>
+      <outfile xil_pn:name="add_sub.prj"/>
+      <outfile xil_pn:name="add_sub.stx"/>
+      <outfile xil_pn:name="add_sub.syr"/>
+      <outfile xil_pn:name="add_sub.xst"/>
+      <outfile xil_pn:name="add_sub_vhdl.prj"/>
+      <outfile xil_pn:name="add_sub_xst.xrpt"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
+    </transform>
+  </transforms>
+
+</generated_project>

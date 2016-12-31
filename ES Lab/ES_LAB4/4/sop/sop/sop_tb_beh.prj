@@ -1,0 +1,5 @@
+vhdl work "../sop_or.vhd"
+vhdl work "../sop_not.vhd"
+vhdl work "../sop_and.vhd"
+vhdl work "../sop_structural.vhd"
+vhdl work "../sop_tb.vhd"

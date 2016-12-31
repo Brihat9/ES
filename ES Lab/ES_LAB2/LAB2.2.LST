@@ -1,0 +1,123 @@
+A51 MACRO ASSEMBLER  LAB2_2                                                               05/25/2016 08:36:14 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN LAB2.2.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE LAB2.2.ASM SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1                     ORG 00H
+                       2                     
+0000 75403F            3                     MOV 40H,#03FH
+0003 754106            4                     MOV 41H,#06H
+0006 75425B            5                     MOV 42H,#5BH
+0009 75434F            6                     MOV 43H,#4FH
+000C 754466            7                     MOV 44H,#66H
+000F 75456D            8                     MOV 45H,#6DH
+0012 75467D            9                     MOV 46H,#7DH
+0015 754707           10                     MOV 47H,#07H
+0018 75487F           11                     MOV 48H,#7FH
+001B 75496F           12                     MOV 49H,#6FH
+001E 754A3F           13                     MOV 4AH,#3FH
+                      14                     
+0021 854050           15                     MOV 50H,40H
+0024 854151           16                     MOV 51H,41H
+0027 854252           17                     MOV 52H,42H
+                      18                     
+002A 75A000           19     AGAIN:  MOV P2,#00H
+002D 7950             20                     MOV R1,#50H
+                      21                     
+002F 7E02             22                     MOV R6,#02H
+0031 7840             23     LOOP2:  MOV R0,#40H
+0033 7D0A             24                     MOV R5,#0AH
+0035 7FFF             25     LOOP1:  MOV R7,#255
+0037 E7               26     MAIN:   MOV A,@R1
+0038 D2A0             27                     SETB P2.0
+003A F580             28                     MOV P0,A
+003C 118C             29                     ACALL DELAY
+003E C2A0             30                     CLR P2.0
+0040 E6               31                     MOV A,@R0
+0041 D2A1             32                     SETB P2.1
+0043 F580             33                     MOV P0,A
+0045 118C             34                     ACALL DELAY
+0047 C2A1             35                     CLR P2.1
+0049 DFEC             36                     DJNZ R7,MAIN
+004B 08               37                     INC R0
+004C DDE7             38                     DJNZ R5,LOOP1
+004E 09               39                     INC R1
+004F DEE0             40                     DJNZ R6,LOOP2
+                      41                     
+0051 7FFF             42                     MOV R7,#255
+0053 E7               43     LOP:    MOV A,@R1
+0054 D2A0             44                     SETB P2.0
+0056 F580             45                     MOV P0,A
+0058 118C             46                     ACALL DELAY
+005A C2A0             47                     CLR P2.0
+005C E6               48                     MOV A,@R0
+005D D2A1             49                     SETB P2.1
+005F F580             50                     MOV P0,A
+0061 118C             51                     ACALL DELAY
+0063 C2A1             52                     CLR P2.1
+0065 DFEC             53                     DJNZ R7,LOP
+0067 19               54                     DEC R1
+                      55                     
+0068 7E02             56                     MOV R6,#02H
+006A 7849             57     LOOP22: MOV R0,#49H
+006C 7D0A             58                     MOV R5,#0AH
+A51 MACRO ASSEMBLER  LAB2_2                                                               05/25/2016 08:36:14 PAGE     2
+
+006E 7FFF             59     LOOP11: MOV R7,#255
+0070 E7               60     MAIN_D: MOV A,@R1
+0071 D2A0             61                     SETB P2.0
+0073 F580             62                     MOV P0,A
+0075 118C             63                     ACALL DELAY
+0077 C2A0             64                     CLR P2.0
+0079 E6               65                     MOV A,@R0
+007A D2A1             66                     SETB P2.1
+007C F580             67                     MOV P0,A
+007E 118C             68                     ACALL DELAY
+0080 C2A1             69                     CLR P2.1
+0082 DFEC             70                     DJNZ R7,MAIN_D
+0084 18               71                     DEC R0
+0085 DDE7             72                     DJNZ R5,LOOP11
+0087 19               73                     DEC R1
+0088 DEE0             74                     DJNZ R6,LOOP22
+                      75                     
+008A 012A             76                     AJMP AGAIN
+                      77                     
+008C 7B02             78     DELAY:  MOV R3,#02H
+008E 7AFA             79     DEL1:   MOV R2,#0FAH
+0090 DAFE             80     DEL2:   DJNZ R2,DEL2
+0092 DBFA             81                     DJNZ R3,DEL1
+0094 22               82                     RET
+                      83                     
+                      84                     END
+                                             
+A51 MACRO ASSEMBLER  LAB2_2                                                               05/25/2016 08:36:14 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   002AH   A   
+DEL1 . . . . . . .  C ADDR   008EH   A   
+DEL2 . . . . . . .  C ADDR   0090H   A   
+DELAY. . . . . . .  C ADDR   008CH   A   
+LOOP1. . . . . . .  C ADDR   0035H   A   
+LOOP11 . . . . . .  C ADDR   006EH   A   
+LOOP2. . . . . . .  C ADDR   0031H   A   
+LOOP22 . . . . . .  C ADDR   006AH   A   
+LOP. . . . . . . .  C ADDR   0053H   A   
+MAIN . . . . . . .  C ADDR   0037H   A   
+MAIN_D . . . . . .  C ADDR   0070H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

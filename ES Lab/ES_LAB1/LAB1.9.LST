@@ -1,0 +1,83 @@
+A51 MACRO ASSEMBLER  LAB1_9                                                               05/12/2016 21:11:58 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN LAB1.9.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE LAB1.9.ASM SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; display those numbers containing binary sequence 11
+0000                   2                     ORG 00H
+                       3     
+                       4     ; GIVEN DATA
+0000 755525            5                     MOV 55H,#25H
+0003 75563D            6                     MOV 56H,#3DH
+0006 7557F7            7                     MOV 57H,#0F7H
+0009 755813            8                     MOV 58H,#13H
+000C 7559C9            9                     MOV 59H,#0C9H
+000F 755A4E           10                     MOV 5AH,#4EH
+0012 755B62           11                     MOV 5BH,#62H
+0015 755C77           12                     MOV 5CH,#77H
+0018 755DB8           13                     MOV 5DH,#0B8H
+001B 755EEB           14                     MOV 5EH,#0EBH
+                      15                     
+                      16     ; MAIN ROUTINE
+001E 7855             17     LOOP:   MOV R0,#55H ;base address
+0020 7E0A             18                     MOV R6,#0AH ;counter = no of given data
+0022 1129             19     AGN:    ACALL B_SEQ
+0024 08               20                     INC R0
+0025 DEFB             21                     DJNZ R6,AGN
+0027 011E             22                     AJMP LOOP
+                      23                     
+                      24     ; SEARCH FOR BINARY SEQUENCE AND DISPLAY                
+0029 E6               25     B_SEQ:  MOV A,@R0
+002A F9               26                     MOV R1,A
+002B 7A08             27                     MOV R2,#08H
+002D 33               28     BITT:   RLC A
+002E 1A               29                     DEC R2
+002F 4003             30                     JC CHK_NXT
+0031 DAFA             31                     DJNZ R2,BITT
+0033 22               32                     RET
+0034 33               33     CHK_NXT:RLC A
+0035 1A               34                     DEC R2
+0036 50F5             35                     JNC BITT
+0038 E9               36                     MOV A,R1
+0039 F580             37                     MOV P0,A
+003B 113E             38                     ACALL DELAY
+003D 22               39                     RET
+                      40     
+                      41     ; DELAY ROUTINE
+003E 7B07             42     DELAY:  MOV R3,#7
+0040 7CFF             43     HERE1:  MOV R4,#255
+0042 7DFF             44     HERE2:  MOV R5,#255
+0044 DDFE             45     HERE3:  DJNZ R5,HERE3
+0046 DCFA             46                     DJNZ R4,HERE2
+0048 DBF6             47                     DJNZ R3,HERE1
+004A 22               48                     RET
+                      49                     
+                      50                     END
+A51 MACRO ASSEMBLER  LAB1_9                                                               05/12/2016 21:11:58 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGN. . . . . . . .  C ADDR   0022H   A   
+BITT . . . . . . .  C ADDR   002DH   A   
+B_SEQ. . . . . . .  C ADDR   0029H   A   
+CHK_NXT. . . . . .  C ADDR   0034H   A   
+DELAY. . . . . . .  C ADDR   003EH   A   
+HERE1. . . . . . .  C ADDR   0040H   A   
+HERE2. . . . . . .  C ADDR   0042H   A   
+HERE3. . . . . . .  C ADDR   0044H   A   
+LOOP . . . . . . .  C ADDR   001EH   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

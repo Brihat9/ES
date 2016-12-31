@@ -1,0 +1,3 @@
+vhdl work "../../func_or1.vhd"
+vhdl work "../../func_and1.vhd"
+vhdl work "../../func_structural.vhd"

@@ -1,0 +1,13 @@
+AR func structural C:/Users/user/Desktop/ES_LAB4/3/func_structural.vhd sub00/vhpl12 1470320774
+AR nand_and dataflow C:/Users/user/Desktop/ES_LAB4/3/nand_and.vhd sub00/vhpl03 1470238687
+AR nand_or dataflow C:/Users/user/Desktop/ES_LAB4/3/nand_or.vhd sub00/vhpl05 1470238674
+AR and1 behavorial C:/Users/user/Desktop/ES_LAB4/3/func_and1.vhd sub00/vhpl09 1470320770
+EN nand_not NULL C:/Users/user/Desktop/ES_LAB4/3/nand_not.vhd sub00/vhpl06 1470238758
+AR nand_not dataflow C:/Users/user/Desktop/ES_LAB4/3/nand_not.vhd sub00/vhpl07 1470238759
+AR or1 behavorial C:/Users/user/Desktop/ES_LAB4/3/func_or1.vhd sub00/vhpl11 1470320772
+EN nand_and NULL C:/Users/user/Desktop/ES_LAB4/3/nand_and.vhd sub00/vhpl02 1470238686
+EN func NULL C:/Users/user/Desktop/ES_LAB4/3/func_structural.vhd sub00/vhpl00 1470320773
+EN or1 NULL C:/Users/user/Desktop/ES_LAB4/3/func_or1.vhd sub00/vhpl10 1470320771
+EN nand_or NULL C:/Users/user/Desktop/ES_LAB4/3/nand_or.vhd sub00/vhpl04 1470238673
+AR func behavioral C:/Users/user/Desktop/ES_LAB4/3/func_dataflow.vhd sub00/vhpl01 1470237910
+EN and1 NULL C:/Users/user/Desktop/ES_LAB4/3/func_and1.vhd sub00/vhpl08 1470320769

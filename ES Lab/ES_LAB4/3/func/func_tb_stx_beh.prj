@@ -1,0 +1,4 @@
+vhdl isim_temp "../../func_or1.vhd"
+vhdl isim_temp "../../func_and1.vhd"
+vhdl isim_temp "../../func_structural.vhd"
+vhdl isim_temp "../../func_tb.vhd"

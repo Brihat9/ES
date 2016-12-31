@@ -1,0 +1,3 @@
+vhdl isim_temp "../xor_nor.vhd"
+vhdl isim_temp "../bcd_gray_structural.vhd"
+vhdl isim_temp "../bcd_gray_testbench.vhd"

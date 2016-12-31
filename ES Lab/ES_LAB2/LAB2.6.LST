@@ -1,0 +1,111 @@
+A51 MACRO ASSEMBLER  LAB2_6                                                               05/25/2016 20:35:11 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN LAB2.6.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE LAB2.6.ASM SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ;SCROLLING DISPLAY OF ROLL NUMBER
+                       2     
+0000                   3                     ORG 00H
+                       4     ;C513           
+0000 754039            5                     MOV 40H,#39H
+0003 75416D            6                     MOV 41H,#6DH
+0006 754206            7                     MOV 42H,#06H
+0009 7543CF            8                     MOV 43H,#0CFH
+                       9     ;C514           
+000C 754439           10                     MOV 44H,#39H
+000F 75456D           11                     MOV 45H,#6DH
+0012 754606           12                     MOV 46H,#06H
+0015 7547E6           13                     MOV 47H,#0E6H
+                      14     ;C515           
+0018 754839           15                     MOV 48H,#39H
+001B 75496D           16                     MOV 49H,#6DH
+001E 754A06           17                     MOV 4AH,#06H
+0021 754BED           18                     MOV 4BH,#0EDH
+                      19     ;C516           
+0024 754C39           20                     MOV 4CH,#39H
+0027 754D6D           21                     MOV 4DH,#6DH
+002A 754E06           22                     MOV 4EH,#06H
+002D 754FFD           23                     MOV 4FH,#0FDH
+                      24     ;C51            
+0030 755039           25                     MOV 50H,#39H
+0033 75516D           26                     MOV 51H,#6DH
+0036 755206           27                     MOV 52H,#06H
+                      28                     
+                      29     
+                      30     ; DISPLAY
+0039 7840             31     REPEAT: MOV R0,#40H
+003B 7C10             32                     MOV R4,#10H
+003D 7FFF             33     LOOP1:  MOV R7,#255
+003F E6               34     MAIN:   MOV A,@R0
+0040 D2A0             35                     SETB P2.0
+0042 F580             36                     MOV P0,A
+0044 1170             37                     ACALL DELAY
+0046 C2A0             38                     CLR P2.0
+0048 08               39                     INC R0
+                      40                     
+0049 E6               41                     MOV A,@R0
+004A D2A1             42                     SETB P2.1
+004C F580             43                     MOV P0,A
+004E 1170             44                     ACALL DELAY
+0050 C2A1             45                     CLR P2.1
+0052 08               46                     INC R0
+                      47                     
+0053 E6               48                     MOV A,@R0
+0054 D2A2             49                     SETB P2.2
+0056 F580             50                     MOV P0,A
+0058 1170             51                     ACALL DELAY
+005A C2A2             52                     CLR P2.2
+005C 08               53                     INC R0
+                      54                     
+005D E6               55                     MOV A,@R0
+005E D2A3             56                     SETB P2.3
+0060 F580             57                     MOV P0,A
+0062 1170             58                     ACALL DELAY
+A51 MACRO ASSEMBLER  LAB2_6                                                               05/25/2016 20:35:11 PAGE     2
+
+0064 C2A3             59                     CLR P2.3
+                      60                     
+0066 18               61                     DEC R0
+0067 18               62                     DEC R0
+0068 18               63                     DEC R0
+                      64                     
+0069 DFD4             65                     DJNZ R7,MAIN
+                      66                     
+006B 08               67                     INC R0
+006C DCCF             68                     DJNZ R4,LOOP1
+006E 0139             69                     AJMP REPEAT
+                      70                                                     
+0070 7B02             71     DELAY:  MOV R3,#02H
+0072 7AFA             72     DEL1:   MOV R2,#0FAH
+0074 DAFE             73     DEL2:   DJNZ R2,DEL2
+0076 DBFA             74                     DJNZ R3,DEL1
+0078 22               75                     RET
+                      76                                     
+                      77                     END
+                                             
+A51 MACRO ASSEMBLER  LAB2_6                                                               05/25/2016 20:35:11 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DEL1 . . . . . . .  C ADDR   0072H   A   
+DEL2 . . . . . . .  C ADDR   0074H   A   
+DELAY. . . . . . .  C ADDR   0070H   A   
+LOOP1. . . . . . .  C ADDR   003DH   A   
+MAIN . . . . . . .  C ADDR   003FH   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+REPEAT . . . . . .  C ADDR   0039H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

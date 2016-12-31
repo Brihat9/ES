@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/Users/user/Desktop/ES_LAB4/5/e/mux2to1/func_tb_isim_beh.exe" -prj "C:/Users/user/Desktop/ES_LAB4/5/e/mux2to1/func_tb_beh.prj" "work.func_tb" 

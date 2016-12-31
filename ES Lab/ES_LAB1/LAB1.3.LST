@@ -1,0 +1,69 @@
+A51 MACRO ASSEMBLER  LAB1_3                                                               05/24/2016 11:05:05 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN LAB1.3.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE LAB1.3.ASM SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; ; multiply using successive addition
+                       2     
+                       3                     ; ORG 00H
+                       4                     
+                       5                     ; MOV 51H,#0FFH
+                       6                     ; MOV 50H,#0DEH
+                       7                     
+                       8                     ; MOV A,#0H
+                       9                     ; MOV R1,#0H
+                      10                     
+                      11                     ; MOV R0,51H
+                      12     ; AGAIN:        ADD A,50H
+                      13                     ; JNC SKIP
+                      14                     ; INC R1
+                      15     ; SKIP: DJNZ R0,AGAIN
+                      16     
+                      17                     ; MOV 60H,A
+                      18                     ; MOV 51H,R1
+                      19                     
+                      20     ; LOOP: MOV P0,A
+                      21                     ; ACALL DELAY
+                      22                     ; MOV P0,R1
+                      23                     ; ACALL DELAY
+                      24                     ; AJMP FINISH
+                      25                     ; AJMP LOOP
+                      26     
+                      27     ; DELAY:        MOV R4,#7
+                      28     ; HERE1:        MOV R5,#255
+                      29     ; HERE2:        MOV R7,#255
+                      30     ; HERE3:        DJNZ R7,HERE3
+                      31                     ; DJNZ R5,HERE2
+                      32                     ; DJNZ R4,HERE1
+                      33                     ; RET
+                      34                     
+                      35     ; FINISH:       NOP
+                      36                     ; END
+                      37                     
+0000                  38                     ORG 00H
+                      39                     
+0000 7423             40                     MOV A,#23H
+0002 7840             41                     MOV R0,#40H
+0004 F6               42                     MOV @R0,A
+                      43                     ;MOV 40H,A
+                      44                     
+                      45                     END
+                                             
+A51 MACRO ASSEMBLER  LAB1_3                                                               05/24/2016 11:05:05 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

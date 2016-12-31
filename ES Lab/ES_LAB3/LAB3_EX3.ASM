@@ -1,0 +1,95 @@
+;ex3
+		ORG 00H
+		
+		MOV TMOD,#10H 
+		MOV P2,#00H			
+		MOV DPTR,#LABEL1	
+		
+START:	MOV R0,#00		
+		MOV R1,#00											
+		
+LOOP1:	MOV R7,#27H		
+MAIN:	MOV A,R0		;1
+		ACALL HTOD		;2
+		MOV B,A			;1
+		ANL A,#0FH		;2
+		ACALL DISPLAY	;2
+		SETB P2.3		;1
+		MOV P0,A		;1
+		ACALL DELAY_T	;2
+		;ACALL DELAY		;2
+		CLR P2.3		;1
+		
+		MOV A,B			;1
+		ANL A,#0F0H		;2
+		SWAP A			;1
+		ACALL DISPLAY	;2
+		SETB P2.2		;1
+		MOV P0,A		;1
+		ACALL DELAY_T		;2
+		;ACALL DELAY		;2
+		CLR P2.2		;1
+		
+		MOV A,R1		;1
+		ACALL HTOD		;2
+		MOV B,A			;1
+		ANL A,#0FH		;2
+		ACALL DISPLAY	;2
+		ORL A,#80H		;2
+		SETB P2.1		;1
+		MOV P0,A		;1
+		ACALL DELAY_T		;2
+		;ACALL DELAY		;2
+ 		CLR P2.1		;1
+		
+		MOV A,B			;1
+		ANL A,#0F0H		;2
+		SWAP A			;1
+		ACALL DISPLAY	;2
+		SETB P2.0		;1
+		MOV P0,A		;1
+		ACALL DELAY_T		;2
+		;ACALL DELAY		;2
+		CLR P2.0		;1
+		DJNZ R7,MAIN	;2
+		;DJNZ R6,LOOP1	;2
+	
+		CJNE R0,#3BH,LESS		
+		INC R1					
+		MOV R0,#0FFH			
+LESS:	INC R0					
+		CJNE R1,#3CH,LOOP1		
+		
+		AJMP START		
+					
+;HEX TO DEC CONVERTER
+HTOD:	MOV B,#0AH		
+		DIV AB			
+		SWAP A			
+		ADD A,B			
+		RET				
+
+DELAY_T:MOV TL1,#0EH		
+		MOV TH1,#0E9H	
+		
+		SETB TR1		
+AGAIN:	JNB TF1, AGAIN	 
+		CLR TR1			
+		CLR TF1			
+		RET				
+		
+DISPLAY:MOVC A,@A+DPTR	
+		RET				
+		
+LABEL1:	DB 3FH
+		DB 06H
+		DB 5BH
+		DB 4FH
+		DB 66H
+		DB 6DH
+		DB 7DH
+		DB 07H
+		DB 7FH
+		DB 6FH
+				
+		END

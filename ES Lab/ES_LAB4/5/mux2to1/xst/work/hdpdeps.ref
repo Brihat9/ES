@@ -1,0 +1,14 @@
+V3 8
+FL C:/Users/user/Desktop/ES_LAB4/3/func_behavioral.vhd 2016/08/03.21:03:01 P.28xd
+EN work/func 1470237491 FL C:/Users/user/Desktop/ES_LAB4/3/func_behavioral.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/func/behavioral 1470237492 \
+      FL C:/Users/user/Desktop/ES_LAB4/3/func_behavioral.vhd EN work/func 1470237491
+FL C:/Users/user/Desktop/ES_LAB4/5/2to1mux.vhd 2016/08/03.19:12:28 P.28xd
+FL C:/Users/user/Desktop/ES_LAB4/5/2to1mux_if_then_else.vhd 2016/08/03.20:45:17 P.28xd
+EN work/mux2to1 1470236443 \
+      FL C:/Users/user/Desktop/ES_LAB4/5/2to1mux_if_then_else.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/mux2to1/behavioral 1470236444 \
+      FL C:/Users/user/Desktop/ES_LAB4/5/2to1mux_if_then_else.vhd EN work/mux2to1 1470236443
+FL C:/Users/user/Desktop/ES_LAB4/5/2to1mux_when_else.vhd 2016/08/03.19:54:34 P.28xd

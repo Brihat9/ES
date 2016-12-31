@@ -1,0 +1,60 @@
+; sort in ascending order using bubble sort technique
+
+		ORG 00H
+		
+		MOV 60H,#0A5H
+		MOV 61H,#0FDH
+		MOV 62H,#67H
+		MOV 63H,#42H
+		MOV 64H,#0DFH
+		MOV 65H,#9AH
+		MOV 66H,#84H
+		MOV 67H,#1BH
+		MOV 68H,#0C7H
+		MOV 69H,#31H
+			
+		MOV R1,#09H
+AGN2:	MOV A,R1
+		MOV R2,A
+		
+		MOV R0,#60H
+		MOV A,@R0
+		
+AGN1:	INC R0
+		MOV R3,A
+		MOV A,@R0
+		MOV R4,A
+		
+		MOV A,R3
+		SUBB A,R4
+		JC SKIP
+		
+		MOV A,R3
+		MOV @R0,A
+		MOV A,R4
+		DEC R0
+		MOV @R0,A
+		INC R0
+		
+SKIP:	MOV A,@R0
+		DJNZ R2,AGN1
+		DJNZ R1,AGN2
+			
+REP:	MOV R1,#0AH
+		MOV R0,#60H
+LOOP:	MOV A,@R0
+		MOV P0,A
+		ACALL DELAY
+		INC R0
+		DJNZ R1,LOOP
+		AJMP REP
+
+DELAY: 	MOV R3,#7
+HERE1:	MOV R4,#255
+HERE2: 	MOV R5,#255
+HERE3:	DJNZ R5,HERE3
+		DJNZ R4,HERE2
+		DJNZ R3,HERE1
+		RET
+		
+		END

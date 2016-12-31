@@ -1,0 +1,2 @@
+vhdl work "../small_ckt_behavorial.vhd"
+vhdl work "../small_ckt_tb.vhd"

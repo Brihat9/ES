@@ -1,0 +1,30 @@
+C51 COMPILER V9.50a   NTHG                                                                 09/09/2016 14:35:46 PAGE 1   
+
+
+C51 COMPILER V9.50a, COMPILATION OF MODULE NTHG
+OBJECT MODULE PLACED IN .\nthg.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE C:\Users\user\Desktop\nthg.c BROWSE DEBUG OBJECTEXTEND PRINT(.\nthg.lst) TA
+                    -BS(2) OBJECT(.\nthg.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          
+   3          void main(void)
+   4          {
+   5   1      unsigned char data a _at_ 0x50;
+*** ERROR C274 IN LINE 5 OF C:\Users\user\Desktop\nthg.c: 'a': absolute specifier illegal
+   6   1      unsigned char data b _at_ 0x51;
+*** ERROR C274 IN LINE 6 OF C:\Users\user\Desktop\nthg.c: 'b': absolute specifier illegal
+   7   1      unsigned int data result _at_ 0x52;
+*** ERROR C274 IN LINE 7 OF C:\Users\user\Desktop\nthg.c: 'result': absolute specifier illegal
+   8   1        //int i;
+   9   1        result = a + b;
+  10   1      //  for (i=0;i<2;i++)
+  11   1      //  {
+  12   1      //    res[i] = result % 0x100;
+  13   1      //    result >>= 8;
+  14   1      //  }
+  15   1      }
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  3 ERROR(S)

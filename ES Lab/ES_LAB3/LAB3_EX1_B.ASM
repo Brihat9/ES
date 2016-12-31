@@ -1,0 +1,25 @@
+		ORG 00H
+
+		MOV TMOD,#00 ; TIMER 1 IN MODE 0 ;2
+		
+HERE:	MOV TL1,#01H		;2
+		MOV TH1,#0AAH		;2
+		SETB P1.5			;1
+		ACALL DELAY			;2
+		
+		MOV R2,#04H			;2
+AGN:	MOV TL1,#01H		;2
+		MOV TH1,#0AAH		;2
+		CLR P1.5			;1
+		ACALL DELAY			;2
+		DJNZ R2,AGN			;2
+	
+		SJMP HERE			;2
+		
+DELAY:	SETB TR1			;1
+AGAIN:	JNB TF1, AGAIN		;2750
+		CLR TR1				;1
+		CLR TF1				;1
+		RET					;2
+		
+		END

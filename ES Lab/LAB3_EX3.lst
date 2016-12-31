@@ -1,0 +1,128 @@
+A51 MACRO ASSEMBLER  LAB3_EX3                                                             08/01/2016 19:55:23 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN .\LAB3_EX3.obj
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE C:\Users\user\Desktop\ESL3\A\LAB3_EX3.ASM SET(SMALL) DEBUG PRINT(.\LAB3_EX
+                      3.lst) OBJECT(.\LAB3_EX3.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1                     ORG 00H
+0000 758910            2                     MOV TMOD,#10H 
+0003 75A000            3                     MOV P2,#00H                     
+0006 900079            4                     MOV DPTR,#LABEL1
+                       5                     
+0009 7800              6     START:  MOV R0,#00              
+000B 7900              7                     MOV R1,#00                                                                 
+                                                  
+000D 7F19              8     LOOP1:  MOV R7,#19H             
+000F E8                9     MAIN:   MOV A,R0                 
+0010 115F             10                     ACALL HTOD               
+0012 F5F0             11                     MOV B,A                  
+0014 540F             12                     ANL A,#0FH               
+0016 1177             13                     ACALL DISPLAY    
+0018 D2A3             14                     SETB P2.3                
+001A F580             15                     MOV P0,A                 
+001C 1167             16                     ACALL DELAY_T    
+                      17                     ;ACALL DELAY             
+001E C2A3             18                     CLR P2.3                 
+0020 E5F0             19                     MOV A,B                  
+0022 54F0             20                     ANL A,#0F0H              
+0024 C4               21                     SWAP A                   
+0025 1177             22                     ACALL DISPLAY    
+0027 D2A2             23                     SETB P2.2                
+0029 F580             24                     MOV P0,A                 
+002B 1167             25                     ACALL DELAY_T            
+                      26                     ;ACALL DELAY             
+002D C2A2             27                     CLR P2.2                 
+002F E9               28                     MOV A,R1                 
+0030 115F             29                     ACALL HTOD               
+0032 F5F0             30                     MOV B,A                  
+0034 540F             31                     ANL A,#0FH               
+0036 1177             32                     ACALL DISPLAY    
+0038 4480             33                     ORL A,#80H               
+003A D2A1             34                     SETB P2.1                
+003C F580             35                     MOV P0,A                 
+003E 1167             36                     ACALL DELAY_T            
+                      37                     ;ACALL DELAY             
+0040 C2A1             38                     CLR P2.1                 
+0042 E5F0             39                     MOV A,B                  
+0044 54F0             40                     ANL A,#0F0H              
+0046 C4               41                     SWAP A                   
+0047 1177             42                     ACALL DISPLAY    
+0049 D2A0             43                     SETB P2.0                
+004B F580             44                     MOV P0,A                 
+004D 1167             45                     ACALL DELAY_T            
+                      46                     ;ACALL DELAY             
+004F C2A0             47                     CLR P2.0                 
+0051 DFBC             48                     DJNZ R7,MAIN     
+                      49                     ;DJNZ R6,LOOP1   
+0053 B83B03           50                     CJNE R0,#3BH,LESS               
+0056 09               51                     INC R1                                  
+0057 78FF             52                     MOV R0,#0FFH                    
+0059 08               53     LESS:   INC R0                                  
+005A B93CB0           54                     CJNE R1,#3CH,LOOP1              
+005D 0109             55                     AJMP START              
+                      56                                             
+A51 MACRO ASSEMBLER  LAB3_EX3                                                             08/01/2016 19:55:23 PAGE     2
+
+005F 75F00A           57     HTOD:   MOV B,#0AH              
+0062 84               58                     DIV AB                  
+0063 C4               59                     SWAP A                  
+0064 25F0             60                     ADD A,B                 
+0066 22               61                     RET                             
+                      62     
+0067 758B1B           63     DELAY_T:MOV TL1,#1BH            
+006A 758DDC           64                     MOV TH1,#0DCH   
+006D D28E             65                     SETB TR1                
+006F 308FFD           66     AGAIN:  JNB TF1, AGAIN   
+0072 C28E             67                     CLR TR1                 
+0074 C28F             68                     CLR TF1                 
+0076 22               69                     RET                             
+                      70                     
+0077 93               71     DISPLAY:MOVC A,@A+DPTR  
+0078 22               72                     RET                             
+                      73     
+0079 3F               74     LABEL1: DB 3FH
+007A 06               75                     DB 06H
+007B 5B               76                     DB 5BH
+007C 4F               77                     DB 4FH
+007D 66               78                     DB 66H
+007E 6D               79                     DB 6DH
+007F 7D               80                     DB 7DH
+0080 07               81                     DB 07H
+0081 7F               82                     DB 7FH
+0082 6F               83                     DB 6FH
+                      84                     END
+A51 MACRO ASSEMBLER  LAB3_EX3                                                             08/01/2016 19:55:23 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   006FH   A   
+B. . . . . . . . .  D ADDR   00F0H   A   
+DELAY_T. . . . . .  C ADDR   0067H   A   
+DISPLAY. . . . . .  C ADDR   0077H   A   
+HTOD . . . . . . .  C ADDR   005FH   A   
+LABEL1 . . . . . .  C ADDR   0079H   A   
+LESS . . . . . . .  C ADDR   0059H   A   
+LOOP1. . . . . . .  C ADDR   000DH   A   
+MAIN . . . . . . .  C ADDR   000FH   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+START. . . . . . .  C ADDR   0009H   A   
+TF1. . . . . . . .  B ADDR   0088H.7 A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TL1. . . . . . . .  D ADDR   008BH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/user/Desktop/ES_LAB4/1/a/small_ckt_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="numeric_std" />
+            <top_module name="small_ckt_tb" />
+            <top_module name="std_logic_1164" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="2" />
+   <wvobject fp_name="/small_ckt_tb/input_vector" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">input_vector[3:0]</obj_property>
+      <obj_property name="ObjectShortName">input_vector[3:0]</obj_property>
+      <wvobject fp_name="/small_ckt_tb/input_vector[3]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[3]</obj_property>
+         <obj_property name="ObjectShortName">input_vector[3]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/small_ckt_tb/input_vector[2]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[2]</obj_property>
+         <obj_property name="ObjectShortName">input_vector[2]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/small_ckt_tb/input_vector[1]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[1]</obj_property>
+         <obj_property name="ObjectShortName">input_vector[1]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/small_ckt_tb/input_vector[0]" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">[0]</obj_property>
+         <obj_property name="ObjectShortName">input_vector[0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/small_ckt_tb/output" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">output</obj_property>
+      <obj_property name="ObjectShortName">output</obj_property>
+   </wvobject>
+</wave_config>

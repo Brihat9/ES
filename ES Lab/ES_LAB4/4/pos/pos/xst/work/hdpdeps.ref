@@ -1,0 +1,28 @@
+V3 19
+FL C:/Users/user/Desktop/ES_LAB4/4/pos/pos_and.vhd 2016/08/04.21:06:49 P.28xd
+EN work/and1 1470324556 FL C:/Users/user/Desktop/ES_LAB4/4/pos/pos_and.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/and1/behavorial 1470324557 \
+      FL C:/Users/user/Desktop/ES_LAB4/4/pos/pos_and.vhd EN work/and1 1470324556
+FL C:/Users/user/Desktop/ES_LAB4/4/pos/pos_behavorial.vhd 2016/08/04.20:54:39 P.28xd
+AR work/pos/behavorial -1 \
+      FL C:/Users/user/Desktop/ES_LAB4/4/pos/pos_behavorial.vhd EN work/pos 1470324558
+FL C:/Users/user/Desktop/ES_LAB4/4/pos/pos_dataflow.vhd 2016/08/04.20:51:41 P.28xd
+AR work/pos/dataflow -1 FL C:/Users/user/Desktop/ES_LAB4/4/pos/pos_dataflow.vhd \
+      EN work/pos 1470324558
+FL C:/Users/user/Desktop/ES_LAB4/4/pos/pos_not.vhd 2016/08/04.21:09:06 P.28xd
+EN work/not1 1470324552 FL C:/Users/user/Desktop/ES_LAB4/4/pos/pos_not.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/not1/behavorial 1470324553 \
+      FL C:/Users/user/Desktop/ES_LAB4/4/pos/pos_not.vhd EN work/not1 1470324552
+FL C:/Users/user/Desktop/ES_LAB4/4/pos/pos_or.vhd 2016/08/04.21:07:52 P.28xd
+EN work/or1 1470324554 FL C:/Users/user/Desktop/ES_LAB4/4/pos/pos_or.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/or1/behavorial 1470324555 \
+      FL C:/Users/user/Desktop/ES_LAB4/4/pos/pos_or.vhd EN work/or1 1470324554
+FL C:/Users/user/Desktop/ES_LAB4/4/pos/pos_structural.vhd 2016/08/04.21:14:07 P.28xd
+EN work/pos 1470324558 FL C:/Users/user/Desktop/ES_LAB4/4/pos/pos_structural.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/pos/structural 1470324559 \
+      FL C:/Users/user/Desktop/ES_LAB4/4/pos/pos_structural.vhd EN work/pos 1470324558 \
+      CP not1 CP or1 CP and1

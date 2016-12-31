@@ -1,0 +1,2 @@
+vhdl work "../../2to1mux_if_then_else.vhd"
+vhdl work "../../2to1mux_tb.vhd"

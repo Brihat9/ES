@@ -1,0 +1,26 @@
+Running: C:\Xilinx\14.2\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Users/user/Desktop/ES_LAB4/4/pos/pos/pos_tb_isim_beh.exe -prj C:/Users/user/Desktop/ES_LAB4/4/pos/pos/pos_tb_beh.prj work.pos_tb 
+ISim P.28xd (signature 0xa0883be4)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/Users/user/Desktop/ES_LAB4/4/pos/pos/../pos_or.vhd" into library work
+Parsing VHDL file "C:/Users/user/Desktop/ES_LAB4/4/pos/pos/../pos_not.vhd" into library work
+Parsing VHDL file "C:/Users/user/Desktop/ES_LAB4/4/pos/pos/../pos_and.vhd" into library work
+Parsing VHDL file "C:/Users/user/Desktop/ES_LAB4/4/pos/pos/../pos_structural.vhd" into library work
+Parsing VHDL file "C:/Users/user/Desktop/ES_LAB4/4/pos/pos/../pos_tb.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling architecture behavorial of entity not1 [not1_default]
+Compiling architecture behavorial of entity or1 [or1_default]
+Compiling architecture behavorial of entity and1 [and1_default]
+Compiling architecture structural of entity pos [pos_default]
+Compiling architecture behavioral of entity pos_tb
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 12 VHDL Units
+Built simulation executable C:/Users/user/Desktop/ES_LAB4/4/pos/pos/pos_tb_isim_beh.exe
+Fuse Memory Usage: 34524 KB
+Fuse CPU Usage: 640 ms

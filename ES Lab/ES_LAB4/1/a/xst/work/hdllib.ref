@@ -1,0 +1,10 @@
+AR andnot dataflow C:/Users/user/Desktop/ES_LAB4/1/andnot.vhd sub00/vhpl03 1470145561
+EN andnot NULL C:/Users/user/Desktop/ES_LAB4/1/andnot.vhd sub00/vhpl02 1470145560
+AR small_ckt dataflow C:/Users/user/Desktop/ES_LAB4/1/small_ckt_dataflow.vhd sub00/vhpl08 1470148598
+EN small_ckt NULL C:/Users/user/Desktop/ES_LAB4/1/small_ckt_behavorial.vhd sub00/vhpl06 1470149996
+AR or1 dataflow C:/Users/user/Desktop/ES_LAB4/1/or1.vhd sub00/vhpl05 1470145563
+EN or1 NULL C:/Users/user/Desktop/ES_LAB4/1/or1.vhd sub00/vhpl04 1470145562
+AR small_ckt behavorial C:/Users/user/Desktop/ES_LAB4/1/small_ckt_behavorial.vhd sub00/vhpl09 1470149997
+AR and1 dataflow C:/Users/user/Desktop/ES_LAB4/1/and1.vhd sub00/vhpl01 1470145559
+AR small_ckt structural C:/Users/user/Desktop/ES_LAB4/1/small_ckt.vhd sub00/vhpl07 1470145565
+EN and1 NULL C:/Users/user/Desktop/ES_LAB4/1/and1.vhd sub00/vhpl00 1470145558

@@ -1,0 +1,5 @@
+vhdl isim_temp "../pos_or.vhd"
+vhdl isim_temp "../pos_not.vhd"
+vhdl isim_temp "../pos_and.vhd"
+vhdl isim_temp "../pos_structural.vhd"
+vhdl isim_temp "../pos_tb.vhd"

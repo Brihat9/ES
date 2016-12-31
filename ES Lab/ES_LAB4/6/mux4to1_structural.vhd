@@ -1,0 +1,23 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY mux4to1 IS PORT (
+	X1, X2, X3, X4, S0, S1: IN STD_LOGIC;
+	Y: OUT STD_LOGIC
+);
+END mux4to1;
+
+ARCHITECTURE structural OF mux4to1 IS
+	SIGNAL F1, F2: STD_LOGIC;
+
+COMPONENT mux2to1 IS PORT (
+	I1, I2, SEL: IN STD_LOGIC;
+	O: OUT STD_LOGIC
+);
+END COMPONENT;
+
+BEGIN
+	M0: mux2to1 PORT MAP (I1 => X1, I2 => X2, SEL => S0, O => F1);
+	M1: mux2to1 PORT MAP (I1 => X3, I2 => X4, SEL => S0, O => F2);
+	M2: mux2to1 PORT MAP (I1 => F1, I2 => F2, SEL => S1, O => Y);
+END structural;

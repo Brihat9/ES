@@ -1,0 +1,13 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY xor1 IS PORT (
+	i1,i2: IN STD_LOGIC;
+	o1: OUT STD_LOGIC
+);
+END xor1;
+
+ARCHITECTURE dataflow OF xor1 IS
+BEGIN
+	o1 <= i1 XOR i2;
+END dataflow;

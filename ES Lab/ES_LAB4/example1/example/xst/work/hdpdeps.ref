@@ -1,0 +1,22 @@
+V3 15
+FL C:/Users/user/Desktop/ES_LAB4/and_1.vhd 2016/08/02.11:07:03 P.28xd
+EN work/and_1 1470117201 FL C:/Users/user/Desktop/ES_LAB4/and_1.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/and_1/dataflow 1470117202 \
+      FL C:/Users/user/Desktop/ES_LAB4/and_1.vhd EN work/and_1 1470117201
+FL C:/Users/user/Desktop/ES_LAB4/and_2.vhd 2016/08/02.11:08:35 P.28xd
+EN work/and_2 1470117203 FL C:/Users/user/Desktop/ES_LAB4/and_2.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/and_2/dataflow 1470117204 \
+      FL C:/Users/user/Desktop/ES_LAB4/and_2.vhd EN work/and_2 1470117203
+FL C:/Users/user/Desktop/ES_LAB4/or_1.vhd 2016/08/02.11:11:08 P.28xd
+EN work/or_1 1470117205 FL C:/Users/user/Desktop/ES_LAB4/or_1.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/or_1/dataflow 1470117206 \
+      FL C:/Users/user/Desktop/ES_LAB4/or_1.vhd EN work/or_1 1470117205
+FL C:/Users/user/Desktop/ES_LAB4/small_ckt.vhd 2016/08/02.11:38:17 P.28xd
+EN work/small_ckt 1470117207 FL C:/Users/user/Desktop/ES_LAB4/small_ckt.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/small_ckt/structural 1470117208 \
+      FL C:/Users/user/Desktop/ES_LAB4/small_ckt.vhd EN work/small_ckt 1470117207 \
+      CP and_1 CP and_2 CP or_1

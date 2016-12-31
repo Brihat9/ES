@@ -1,0 +1,24 @@
+Running: C:\Xilinx\14.2\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Users/user/Desktop/ES_LAB4/7/g/add_sub_tb_isim_beh.exe -prj C:/Users/user/Desktop/ES_LAB4/7/g/add_sub_tb_beh.prj work.add_sub_tb 
+ISim P.28xd (signature 0xa0883be4)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/Users/user/Desktop/ES_LAB4/7/g/../xor1.vhd" into library work
+Parsing VHDL file "C:/Users/user/Desktop/ES_LAB4/7/g/../full_adder.vhd" into library work
+Parsing VHDL file "C:/Users/user/Desktop/ES_LAB4/7/g/../add_sub_structural.vhd" into library work
+Parsing VHDL file "C:/Users/user/Desktop/ES_LAB4/7/g/../add_sub_tb.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling architecture dataflow of entity xor1 [xor1_default]
+Compiling architecture dataflow of entity full_adder [full_adder_default]
+Compiling architecture structural of entity add_sub [add_sub_default]
+Compiling architecture behavioral of entity add_sub_tb
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 10 VHDL Units
+Built simulation executable C:/Users/user/Desktop/ES_LAB4/7/g/add_sub_tb_isim_beh.exe
+Fuse Memory Usage: 34576 KB
+Fuse CPU Usage: 749 ms

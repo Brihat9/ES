@@ -1,0 +1,2 @@
+vhdl isim_temp "../small_ckt_behavorial.vhd"
+vhdl isim_temp "../small_ckt_tb.vhd"

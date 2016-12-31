@@ -1,0 +1,3 @@
+vhdl isim_temp "../mux2to1_dataflow.vhd"
+vhdl isim_temp "../mux4to1_structural.vhd"
+vhdl isim_temp "../mux2to1_tb.vhd"

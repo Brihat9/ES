@@ -1,0 +1,76 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        09/09/2016  14:34:54  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE .\nthg.obj TO test RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\nthg.obj (NTHG)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  test (NTHG)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+                    0008H     0048H                  *** GAP ***
+            DATA    0050H     0001H     ABSOLUTE     
+            DATA    0051H     0001H     ABSOLUTE     
+            DATA    0052H     0002H     ABSOLUTE     
+            IDATA   0054H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     000CH     UNIT         ?C_C51STARTUP
+            CODE    080CH     000BH     UNIT         ?PR?MAIN?NTHG
+
+
+
+OVERLAY MAP OF MODULE:   test (NTHG)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?NTHG
+
+
+
+SYMBOL TABLE OF MODULE:  test (NTHG)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        NTHG
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0052H         PUBLIC        result
+  C:080CH         PUBLIC        main
+  D:0050H         PUBLIC        a
+  D:0051H         PUBLIC        b
+  -------         PROC          MAIN
+  C:080CH         LINE#         6
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/09/2016  14:34:54  PAGE 2
+
+
+  C:080CH         LINE#         7
+  C:080CH         LINE#         9
+  C:0816H         LINE#         15
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        NTHG
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 000BH BYTE ( 0%) *
+******************************************************************************
+
+Program Size: data=13.0 xdata=0 code=26
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,26 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY and1 IS PORT (
+	a,b,c: IN STD_LOGIC;
+	o: OUT STD_LOGIC
+);
+END and1;
+
+ARCHITECTURE behavorial OF and1 IS
+SIGNAL F1,F2,F3,F4: STD_LOGIC;
+
+BEGIN
+
+PROCESS (a,b,c,F1,F2,F3,F4)
+
+	BEGIN
+		F1 <= a NAND a;
+		F2 <= F1 NAND b;
+		F3 <= F2 NAND F2;
+		F4 <= F3 NAND c;
+		o <= F4 NAND F4;
+
+END PROCESS;
+
+END behavorial;

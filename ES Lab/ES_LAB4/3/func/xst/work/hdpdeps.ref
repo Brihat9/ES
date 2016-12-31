@@ -1,0 +1,35 @@
+V3 22
+FL C:/Users/user/Desktop/ES_LAB4/3/func_and1.vhd 2016/08/04.19:18:12 P.28xd
+EN work/and1 1470320769 FL C:/Users/user/Desktop/ES_LAB4/3/func_and1.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/and1/behavorial 1470320770 \
+      FL C:/Users/user/Desktop/ES_LAB4/3/func_and1.vhd EN work/and1 1470320769
+FL C:/Users/user/Desktop/ES_LAB4/3/func_dataflow.vhd 2016/08/03.21:09:12 P.28xd
+AR work/func/behavioral -1 FL C:/Users/user/Desktop/ES_LAB4/3/func_dataflow.vhd \
+      EN work/func 1470320773
+FL C:/Users/user/Desktop/ES_LAB4/3/func_or1.vhd 2016/08/04.19:18:08 P.28xd
+EN work/or1 1470320771 FL C:/Users/user/Desktop/ES_LAB4/3/func_or1.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/or1/behavorial 1470320772 \
+      FL C:/Users/user/Desktop/ES_LAB4/3/func_or1.vhd EN work/or1 1470320771
+FL C:/Users/user/Desktop/ES_LAB4/3/func_structural.vhd 2016/08/04.20:11:01 P.28xd
+EN work/func 1470320773 FL C:/Users/user/Desktop/ES_LAB4/3/func_structural.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/func/structural 1470320774 \
+      FL C:/Users/user/Desktop/ES_LAB4/3/func_structural.vhd EN work/func 1470320773 \
+      CP and1 CP or1
+FL C:/Users/user/Desktop/ES_LAB4/3/nand_and.vhd 2016/08/03.21:20:54 P.28xd
+EN work/nand_and 1470238686 FL C:/Users/user/Desktop/ES_LAB4/3/nand_and.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/nand_and/dataflow 1470238687 \
+      FL C:/Users/user/Desktop/ES_LAB4/3/nand_and.vhd EN work/nand_and 1470238686
+FL C:/Users/user/Desktop/ES_LAB4/3/nand_not.vhd 2016/08/03.21:23:55 P.28xd
+EN work/nand_not 1470238758 FL C:/Users/user/Desktop/ES_LAB4/3/nand_not.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/nand_not/dataflow 1470238759 \
+      FL C:/Users/user/Desktop/ES_LAB4/3/nand_not.vhd EN work/nand_not 1470238758
+FL C:/Users/user/Desktop/ES_LAB4/3/nand_or.vhd 2016/08/03.21:22:17 P.28xd
+EN work/nand_or 1470238673 FL C:/Users/user/Desktop/ES_LAB4/3/nand_or.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/nand_or/dataflow 1470238674 \
+      FL C:/Users/user/Desktop/ES_LAB4/3/nand_or.vhd EN work/nand_or 1470238673

@@ -1,0 +1,66 @@
+A51 MACRO ASSEMBLER  LAB3_EX2_C                                                           07/07/2016 16:44:09 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN LAB3_EX2_C.obj
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE ES_LAB3\LAB3_EX2_C.ASM SET(SMALL) DEBUG PRINT(.\LAB3_EX2_C.lst) OBJECT(LAB
+                      3_EX2_C.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ;ES LAB3 EXERCISE B TIMER 0 MODE 2
+0000                   2                     ORG 00H
+                       3     
+0000 758902            4                     MOV TMOD,#02H   ; TIMER 0 MODE 2 ;2
+                       5                     
+0003 7A02              6     REPEAT: MOV R2,#02H             ;2
+0005 79B4              7     HERE1:  MOV R1,#0B4H    ;2
+0007 758A0A            8     HER1:   MOV TL0,#0AH    ;2      
+000A 1123              9                     ACALL DELAY             ;2
+000C D9F9             10                     DJNZ R1,HER1    ;2
+000E B280             11                     CPL P0.0                ;1
+0010 DAF3             12                     DJNZ R2,HERE1   ;2
+                      13     
+0012 7A0A             14                     MOV R2,#0AH             ;2
+0014 7924             15     HERE2:  MOV R1,#024H    ;2 ; B4/5 = 24
+0016 758A0A           16     HER2:   MOV TL0,#0AH    ;2      
+0019 1123             17                     ACALL DELAY             ;2
+001B D9F9             18                     DJNZ R1,HER2    ;2
+001D B280             19                     CPL P0.0                ;1
+001F DAF3             20                     DJNZ R2,HERE2   ;2
+                      21                     
+0021 80E0             22                     SJMP REPEAT             ;2
+                      23                     
+0023 D28C             24     DELAY:  SETB TR0                ;1
+0025 308DFD           25     AGAIN:  JNB TF0, AGAIN  ; X = 245
+0028 C28C             26                     CLR TR0                 ;1
+002A C28D             27                     CLR TF0                 ;1
+002C 22               28                     RET                             ;2
+                      29                     
+                      30                     END
+A51 MACRO ASSEMBLER  LAB3_EX2_C                                                           07/07/2016 16:44:09 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   0025H   A   
+DELAY. . . . . . .  C ADDR   0023H   A   
+HER1 . . . . . . .  C ADDR   0007H   A   
+HER2 . . . . . . .  C ADDR   0016H   A   
+HERE1. . . . . . .  C ADDR   0005H   A   
+HERE2. . . . . . .  C ADDR   0014H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+REPEAT . . . . . .  C ADDR   0003H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,166 @@
+A51 MACRO ASSEMBLER  CLOCK                                                                07/17/2016 12:51:39 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN CLOCK.obj
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE ES_LAB3\CLOCK.ASM SET(SMALL) DEBUG PRINT(.\CLOCK.lst) OBJECT(CLOCK.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ;STATIC DISPLAY OF ROLL NUMBERS
+0000                   2                     ORG 00H
+                       3                     
+0000 758910            4                     MOV TMOD,#10H           ; TIMER 1 IN MODE 1
+0003 75A000            5                     MOV P2,#00H                     ; DEACTIVATE ALL 7 SEG DISPLAY
+0006 900082            6                     MOV DPTR,#LABEL1        ; POINTER TO LED PATTERN
+                       7                     
+0009 7800              8     START:  MOV R0,#00              ;2
+000B 7900              9                     MOV R1,#00              ;2                                                 
+                                                  TOTAL 4
+                      10     ;--------------------------------------------------------------------------
+                      11     
+                      12     ; DISPLAY
+                      13     ;       ---------------------------------------------------------
+                      14     
+000D 7F27             15     LOOP1:  MOV R7,#27H             ;2
+000F E8               16     MAIN:   MOV A,R0                ;1
+0010 115F             17                     ACALL HTOD              ;2              IN 9
+0012 F5F0             18                     MOV B,A                 ;1
+0014 540F             19                     ANL A,#0FH              ;2
+0016 1180             20                     ACALL DISPLAY   ;2              IN 3
+0018 D2A3             21                     SETB P2.3               ;1
+001A F580             22                     MOV P0,A                ;1
+001C 1170             23                     ACALL DELAY_T   ;2              IN 
+                      24                     ;ACALL DELAY            ;2              IN 
+001E C2A3             25                     CLR P2.3                ;1
+                      26                     
+0020 E5F0             27                     MOV A,B                 ;1
+0022 54F0             28                     ANL A,#0F0H             ;2
+0024 C4               29                     SWAP A                  ;1
+0025 1180             30                     ACALL DISPLAY   ;2              IN 3
+0027 D2A2             31                     SETB P2.2               ;1
+0029 F580             32                     MOV P0,A                ;1
+002B 1170             33                     ACALL DELAY_T           ;2              IN 10
+                      34                     ;ACALL DELAY            ;2              IN 
+002D C2A2             35                     CLR P2.2                ;1
+                      36                     
+002F E9               37                     MOV A,R1                ;1
+0030 115F             38                     ACALL HTOD              ;2              IN 9
+0032 F5F0             39                     MOV B,A                 ;1
+0034 540F             40                     ANL A,#0FH              ;2
+0036 1180             41                     ACALL DISPLAY   ;2              IN 3
+0038 4480             42                     ORL A,#80H              ;2
+003A D2A1             43                     SETB P2.1               ;1
+003C F580             44                     MOV P0,A                ;1
+003E 1170             45                     ACALL DELAY_T           ;2              IN 10
+                      46                     ;ACALL DELAY            ;2              IN
+0040 C2A1             47                     CLR P2.1                ;1
+                      48                     
+0042 E5F0             49                     MOV A,B                 ;1
+0044 54F0             50                     ANL A,#0F0H             ;2
+0046 C4               51                     SWAP A                  ;1
+0047 1180             52                     ACALL DISPLAY   ;2              IN 3
+0049 D2A0             53                     SETB P2.0               ;1
+004B F580             54                     MOV P0,A                ;1
+004D 1170             55                     ACALL DELAY_T           ;2              IN 10
+                      56                     ;ACALL DELAY            ;2              IN 
+004F C2A0             57                     CLR P2.0                ;1
+A51 MACRO ASSEMBLER  CLOCK                                                                07/17/2016 12:51:39 PAGE     2
+
+0051 DFBC             58                     DJNZ R7,MAIN    ;2                                      SUB 54
+                      59                     ;DJNZ R6,LOOP1  ;2
+                      60     ;       -----------------------------------------------------------
+                      61             
+0053 B83B03           62                     CJNE R0,#3BH,LESS               ;3
+0056 09               63                     INC R1                                  ;1
+0057 78FF             64                     MOV R0,#0FFH                    ;2
+0059 08               65     LESS:   INC R0                                  ;1
+005A B93CB0           66                     CJNE R1,#3CH,LOOP1              ;3
+                      67                     
+005D 0109             68                     AJMP START                              ;2
+                      69     ;------------------------------------------------------------------------------------
+                      70                                             
+                      71     ;HEX TO DEC CONVERTER
+005F 75F00A           72     HTOD:   MOV B,#0AH                              ;2
+0062 84               73                     DIV AB                                  ;1
+0063 C4               74                     SWAP A                                  ;1
+0064 25F0             75                     ADD A,B                                 ;1
+0066 22               76                     RET                                             ;2                         
+                                                                          TOTAL 07
+                      77     ;------------------------------------------------------------------------------------
+                      78     
+                      79     ; DELAY
+0067 7B02             80     DELAY:  MOV R3,#02H             ;2
+0069 7AFA             81     DEL1:   MOV R2,#0FAH    ;2
+006B DAFE             82     DEL2:   DJNZ R2,DEL2    ;2
+006D DBFA             83                     DJNZ R3,DEL1    ;2
+006F 22               84                     RET                             ;2                                         
+                                                                          TOTAL 10
+                      85     ;------------------------------------------------------------------------------------
+                      86     
+                      87     ; DELAY TIMER
+                      88     
+0070 758B0E           89     DELAY_T:MOV TL1,#0EH    ;2      
+0073 758DE9           90                     MOV TH1,#0E9H   ;2
+                      91                     
+0076 D28E             92                     SETB TR1                ;1
+0078 308FFD           93     AGAIN:  JNB TF1, AGAIN  ; X = 
+007B C28E             94                     CLR TR1                 ;1
+007D C28F             95                     CLR TF1                 ;1
+007F 22               96                     RET                             ;2                                         
+                                                                          TOTAL 9 + X
+                      97     ;------------------------------------------------------------------------------------
+                      98     
+                      99     ;CHOOSE REQUIRED PATTERN
+0080 93              100     DISPLAY:MOVC A,@A+DPTR  ;1
+0081 22              101                     RET                             ;2                                         
+                                                                          TOTAL 3
+                     102     ;------------------------------------------------------------------------------------
+                     103     
+                     104     ;LED PATTERNS FOR NUMBERS 0-9
+0082 3F              105     LABEL1: DB 3FH
+0083 06              106                     DB 06H
+0084 5B              107                     DB 5BH
+0085 4F              108                     DB 4FH
+0086 66              109                     DB 66H
+0087 6D              110                     DB 6DH
+0088 7D              111                     DB 7DH
+0089 07              112                     DB 07H
+008A 7F              113                     DB 7FH
+008B 6F              114                     DB 6FH
+                     115                                     
+                     116                     END
+A51 MACRO ASSEMBLER  CLOCK                                                                07/17/2016 12:51:39 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   0078H   A   
+B. . . . . . . . .  D ADDR   00F0H   A   
+DEL1 . . . . . . .  C ADDR   0069H   A   
+DEL2 . . . . . . .  C ADDR   006BH   A   
+DELAY. . . . . . .  C ADDR   0067H   A   
+DELAY_T. . . . . .  C ADDR   0070H   A   
+DISPLAY. . . . . .  C ADDR   0080H   A   
+HTOD . . . . . . .  C ADDR   005FH   A   
+LABEL1 . . . . . .  C ADDR   0082H   A   
+LESS . . . . . . .  C ADDR   0059H   A   
+LOOP1. . . . . . .  C ADDR   000DH   A   
+MAIN . . . . . . .  C ADDR   000FH   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+START. . . . . . .  C ADDR   0009H   A   
+TF1. . . . . . . .  B ADDR   0088H.7 A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TL1. . . . . . . .  D ADDR   008BH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,25 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY small_ckt IS PORT (
+	A,B,C,D : IN STD_LOGIC;
+	F : OUT STD_LOGIC
+);
+END small_ckt;
+
+ARCHITECTURE behavorial OF small_ckt IS
+SIGNAL F1,F2,F3,F4 : STD_LOGIC;
+
+BEGIN
+example: PROCESS(A,B,C,D,F1,F2,F3,F4)
+
+BEGIN
+	F1 <= A AND B;
+	F2 <= NOT B AND C;
+	F3 <= F1 OR F2;
+	F4 <= F2 AND D;
+	F <= F3 OR F4;
+END PROCESS example;
+
+END behavorial;
+	

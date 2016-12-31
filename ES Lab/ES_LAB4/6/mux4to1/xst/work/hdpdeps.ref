@@ -1,0 +1,13 @@
+V3 7
+FL C:/Users/user/xilinx_project/6/mux2to1_dataflow.vhd 2016/08/07.18:27:27 P.28xd
+EN work/mux2to1 1470574629 FL C:/Users/user/xilinx_project/6/mux2to1_dataflow.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/mux2to1/dataflow 1470574630 \
+      FL C:/Users/user/xilinx_project/6/mux2to1_dataflow.vhd EN work/mux2to1 1470574629
+FL C:/Users/user/xilinx_project/6/mux4to1_structural.vhd 2016/08/07.18:42:03 P.28xd
+EN work/mux4to1 1470574631 \
+      FL C:/Users/user/xilinx_project/6/mux4to1_structural.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/mux4to1/structural 1470574632 \
+      FL C:/Users/user/xilinx_project/6/mux4to1_structural.vhd EN work/mux4to1 1470574631 \
+      CP mux2to1

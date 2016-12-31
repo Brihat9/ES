@@ -1,0 +1,90 @@
+A51 MACRO ASSEMBLER  LAB1_8                                                               05/12/2016 18:44:48 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN LAB1.8.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE LAB1.8.ASM SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; FINDING FACTORIAL OF NUMBER STORED IN REG R3 AND DISPLAY IN DECIMAL FORMAT
+                       2     
+0000                   3                     ORG 00H
+                       4                     
+0000 7B05              5                     MOV R3,#05H
+                       6                     
+0002 8BF0              7                     MOV B,R3
+0004 A9F0              8                     MOV R1,B
+0006 7401              9                     MOV A,#01H
+0008 89F0             10     LOOP:   MOV B,R1
+000A A4               11                     MUL AB
+000B D9FB             12                     DJNZ R1,LOOP
+000D F9               13                     MOV R1,A
+000E E9               14     AGAIN:  MOV A,R1
+000F F580             15                     MOV P0,A
+0011 1142             16                     ACALL DELAY
+                      17                     
+0013 1121             18                     ACALL HTOD
+0015 F580             19                     MOV P0,A
+0017 1142             20                     ACALL DELAY
+                      21                     
+0019 E5F0             22                     MOV A,B
+001B F580             23                     MOV P0,A
+001D 1142             24                     ACALL DELAY
+001F 80ED             25                     SJMP AGAIN
+                      26                     
+0021 7C00             27     HTOD:   MOV R4,#00H
+0023 75F00A           28                     MOV B,#0AH
+0026 84               29                     DIV AB
+0027 FA               30                     MOV R2,A
+0028 940A             31                     SUBB A,#0AH
+002A 400F             32                     JC SKIP
+002C EA               33                     MOV A,R2
+002D ABF0             34                     MOV R3,B
+002F 75F00A           35                     MOV B,#0AH
+0032 84               36                     DIV AB
+0033 FC               37                     MOV R4,A
+0034 F580             38                     MOV P0,A
+0036 E5F0             39                     MOV A,B
+0038 8BF0             40                     MOV B,R3
+003A FA               41                     MOV R2,A
+003B EA               42     SKIP:   MOV A,R2
+003C C4               43                     SWAP A
+003D 25F0             44                     ADD A,B
+003F 8CF0             45                     MOV B,R4
+0041 22               46                     RET
+                      47                     
+0042 7F07             48     DELAY:  MOV R7,#7
+0044 7EFF             49     HERE1:  MOV R6,#255
+0046 7DFF             50     HERE2:  MOV R5,#255
+0048 DDFE             51     HERE3:  DJNZ R5,HERE3
+004A DEFA             52                     DJNZ R6,HERE2
+004C DFF6             53                     DJNZ R7,HERE1
+004E 22               54                     RET
+                      55                     
+                      56                     END
+                                             
+A51 MACRO ASSEMBLER  LAB1_8                                                               05/12/2016 18:44:48 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   000EH   A   
+B. . . . . . . . .  D ADDR   00F0H   A   
+DELAY. . . . . . .  C ADDR   0042H   A   
+HERE1. . . . . . .  C ADDR   0044H   A   
+HERE2. . . . . . .  C ADDR   0046H   A   
+HERE3. . . . . . .  C ADDR   0048H   A   
+HTOD . . . . . . .  C ADDR   0021H   A   
+LOOP . . . . . . .  C ADDR   0008H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+SKIP . . . . . . .  C ADDR   003BH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

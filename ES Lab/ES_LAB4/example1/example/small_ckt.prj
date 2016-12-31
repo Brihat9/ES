@@ -1,0 +1,4 @@
+vhdl work "../or_1.vhd"
+vhdl work "../and_2.vhd"
+vhdl work "../and_1.vhd"
+vhdl work "../small_ckt.vhd"

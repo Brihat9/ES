@@ -1,0 +1,59 @@
+A51 MACRO ASSEMBLER  LAB3_EX1_B                                                           07/15/2016 20:52:52 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN LAB3_EX1_B.obj
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE ES_LAB3\LAB3_EX1_B.ASM SET(SMALL) DEBUG PRINT(.\LAB3_EX1_B.lst) OBJECT(LAB
+                      3_EX1_B.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1                     ORG 00H
+                       2     
+0000 758900            3                     MOV TMOD,#00 ; TIMER 1 IN MODE 0 ;2
+                       4                     
+0003 758B01            5     HERE:   MOV TL1,#01H            ;2
+0006 758DAA            6                     MOV TH1,#0AAH           ;2
+0009 D295              7                     SETB P1.5                       ;1
+000B 111D              8                     ACALL DELAY                     ;2
+                       9                     
+000D 7A04             10                     MOV R2,#04H                     ;2
+000F 758B01           11     AGN:    MOV TL1,#01H            ;2
+0012 758DAA           12                     MOV TH1,#0AAH           ;2
+0015 C295             13                     CLR P1.5                        ;1
+0017 111D             14                     ACALL DELAY                     ;2
+0019 DAF4             15                     DJNZ R2,AGN                     ;2
+                      16             
+001B 80E6             17                     SJMP HERE                       ;2
+                      18                     
+001D D28E             19     DELAY:  SETB TR1                        ;1
+001F 308FFD           20     AGAIN:  JNB TF1, AGAIN          ;2750
+0022 C28E             21                     CLR TR1                         ;1
+0024 C28F             22                     CLR TF1                         ;1
+0026 22               23                     RET                                     ;2
+                      24                     
+                      25                     END
+A51 MACRO ASSEMBLER  LAB3_EX1_B                                                           07/15/2016 20:52:52 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   001FH   A   
+AGN. . . . . . . .  C ADDR   000FH   A   
+DELAY. . . . . . .  C ADDR   001DH   A   
+HERE . . . . . . .  C ADDR   0003H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+TF1. . . . . . . .  B ADDR   0088H.7 A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TL1. . . . . . . .  D ADDR   008BH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

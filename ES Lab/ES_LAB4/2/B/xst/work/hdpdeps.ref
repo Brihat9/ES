@@ -1,0 +1,36 @@
+V3 20
+FL C:/Users/user/Desktop/ES_LAB4/2/bcd_gray_behavorial.vhd 2016/08/03.08:21:48 P.28xd
+AR work/bcd_gray/behavorial -1 \
+      FL C:/Users/user/Desktop/ES_LAB4/2/bcd_gray_behavorial.vhd EN work/bcd_gray 1470201362
+FL C:/Users/user/Desktop/ES_LAB4/2/bcd_gray_dataflow.vhd 2016/08/03.08:08:02 P.28xd
+AR work/bcd_gray/dataflow -1 \
+      FL C:/Users/user/Desktop/ES_LAB4/2/bcd_gray_dataflow.vhd EN work/bcd_gray 1470201362
+FL C:/Users/user/Desktop/ES_LAB4/2/bcd_gray_structural.vhd 2016/08/03.11:00:48 P.28xd
+EN work/bcd_gray 1470201362 \
+      FL C:/Users/user/Desktop/ES_LAB4/2/bcd_gray_structural.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/bcd_gray/structural 1470201363 \
+      FL C:/Users/user/Desktop/ES_LAB4/2/bcd_gray_structural.vhd EN work/bcd_gray 1470201362 \
+      CP xor_nor
+FL C:/Users/user/Desktop/ES_LAB4/2/nor1.vhd 2016/08/03.10:45:28 P.28xd
+EN work/nor1 1470201162 FL C:/Users/user/Desktop/ES_LAB4/2/nor1.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/nor1/dataflow 1470201163 \
+      FL C:/Users/user/Desktop/ES_LAB4/2/nor1.vhd EN work/nor1 1470201162
+FL C:/Users/user/Desktop/ES_LAB4/2/small_ckt_behavorial.vhd 2016/08/02.22:10:15 P.28xd
+EN work/small_ckt 1470155252 \
+      FL C:/Users/user/Desktop/ES_LAB4/2/small_ckt_behavorial.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/small_ckt/behavorial 1470155253 \
+      FL C:/Users/user/Desktop/ES_LAB4/2/small_ckt_behavorial.vhd \
+      EN work/small_ckt 1470155252
+FL C:/Users/user/Desktop/ES_LAB4/2/xor1.vhd 2016/08/02.21:51:45 P.28xd
+EN work/xor1 1470200433 FL C:/Users/user/Desktop/ES_LAB4/2/xor1.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/xor1/dataflow 1470200434 \
+      FL C:/Users/user/Desktop/ES_LAB4/2/xor1.vhd EN work/xor1 1470200433
+FL C:/Users/user/Desktop/ES_LAB4/2/xor_nor.vhd 2016/08/03.10:59:57 P.28xd
+EN work/xor_nor 1470201360 FL C:/Users/user/Desktop/ES_LAB4/2/xor_nor.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/xor_nor/behavorial 1470201361 \
+      FL C:/Users/user/Desktop/ES_LAB4/2/xor_nor.vhd EN work/xor_nor 1470201360

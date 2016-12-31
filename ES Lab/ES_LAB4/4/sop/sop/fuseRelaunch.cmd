@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/Users/user/Desktop/ES_LAB4/4/sop/sop/sop_tb_isim_beh.exe" -prj "C:/Users/user/Desktop/ES_LAB4/4/sop/sop/sop_tb_beh.prj" "work.sop_tb" 

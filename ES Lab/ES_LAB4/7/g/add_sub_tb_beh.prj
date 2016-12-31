@@ -1,0 +1,4 @@
+vhdl work "../xor1.vhd"
+vhdl work "../full_adder.vhd"
+vhdl work "../add_sub_structural.vhd"
+vhdl work "../add_sub_tb.vhd"

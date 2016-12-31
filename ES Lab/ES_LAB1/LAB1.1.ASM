@@ -1,0 +1,43 @@
+; to add 897f9A H and 34BC48 H ,store in memory starting from 40 H and display in port 0
+		ORG 00H
+		
+		MOV R0,#9AH
+		MOV R1,#48H
+		MOV R2,#7FH
+		MOV R3,#0BCH
+		MOV R4,#89H
+		MOV R5,#34H
+		
+		MOV A,R0
+		ADD A,R1
+		MOV 40H,A
+		
+		MOV A,R2
+		ADDC A,R3
+		MOV 41H,A
+		
+		MOV A,R4
+		ADDC A,R5
+		MOV 42H,A
+		
+		MOV A,#0H
+		ADDC A,#0H
+		MOV 43H,A
+		
+AGAIN:	MOV R1,#04H
+		MOV R0,#40H
+NEXT:	MOV P0,@R0
+		ACALL DELAY
+		INC R0
+		DJNZ R1,NEXT
+		AJMP AGAIN
+		
+DELAY: 	MOV R4,#7
+HERE1:	MOV R5,#255
+HERE2: 	MOV R7,#255
+HERE3:	DJNZ R7,HERE3
+		DJNZ R5,HERE2
+		DJNZ R4,HERE1
+		RET
+		
+		END

@@ -1,0 +1,5 @@
+vhdl work "../pos_or.vhd"
+vhdl work "../pos_not.vhd"
+vhdl work "../pos_and.vhd"
+vhdl work "../pos_structural.vhd"
+vhdl work "../pos_tb.vhd"

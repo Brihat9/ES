@@ -1,0 +1,8 @@
+EN and_1 NULL C:/Users/user/Desktop/ES_LAB4/and_1.vhd sub00/vhpl00 1470117201
+EN and_2 NULL C:/Users/user/Desktop/ES_LAB4/and_2.vhd sub00/vhpl02 1470117203
+EN or_1 NULL C:/Users/user/Desktop/ES_LAB4/or_1.vhd sub00/vhpl04 1470117205
+EN small_ckt NULL C:/Users/user/Desktop/ES_LAB4/small_ckt.vhd sub00/vhpl06 1470117207
+AR and_2 dataflow C:/Users/user/Desktop/ES_LAB4/and_2.vhd sub00/vhpl03 1470117204
+AR and_1 dataflow C:/Users/user/Desktop/ES_LAB4/and_1.vhd sub00/vhpl01 1470117202
+AR small_ckt structural C:/Users/user/Desktop/ES_LAB4/small_ckt.vhd sub00/vhpl07 1470117208
+AR or_1 dataflow C:/Users/user/Desktop/ES_LAB4/or_1.vhd sub00/vhpl05 1470117206

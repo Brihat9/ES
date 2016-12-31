@@ -1,0 +1,14 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY mux2to1 IS PORT (
+	S, X1, X2: IN STD_LOGIC;
+	Y: OUT STD_LOGIC
+);
+END mux2to1;
+
+ARCHITECTURE dataflow OF mux2to1 IS
+BEGIN
+	Y <= 	'1' WHEN ((NOT S AND X1) OR (S AND X2)) = '1' ELSE
+			'0';
+END dataflow;

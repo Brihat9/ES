@@ -1,0 +1,64 @@
+A51 MACRO ASSEMBLER  LAB1_4                                                               05/12/2016 21:14:00 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN LAB1.4.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE LAB1.4.ASM SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; divide AF H by 12 H using successive subtraction
+                       2     
+0000                   3                     ORG 00H
+                       4                     
+0000 753EAF            5                     MOV 3EH,#0AFH
+                       6                     ;MOV 15H,#0DEH
+                       7                     
+0003 E53E              8                     MOV A,3EH
+0005 7C00              9                     MOV R4,#0H
+                      10                     
+0007 9412             11     AGAIN:  SUBB A,#12H
+0009 4003             12                     JC DONE
+000B 0C               13                     INC R4
+000C 0107             14                     AJMP AGAIN
+000E 2412             15     DONE:   ADD A,#12H
+0010 FD               16                     MOV R5,A
+                      17                     
+0011 8C80             18     LOOP:   MOV P0,R4
+0013 111B             19                     ACALL DELAY
+0015 8D80             20                     MOV P0,R5
+0017 111B             21                     ACALL DELAY
+0019 0111             22                     AJMP LOOP
+                      23     
+001B 7907             24     DELAY:  MOV R1,#7
+001D 7AFF             25     HERE1:  MOV R2,#255
+001F 7BFF             26     HERE2:  MOV R3,#255
+0021 DBFE             27     HERE3:  DJNZ R3,HERE3
+0023 DAFA             28                     DJNZ R2,HERE2
+0025 D9F6             29                     DJNZ R1,HERE1
+0027 22               30                     RET
+                      31                     
+                      32                     END
+                                             
+A51 MACRO ASSEMBLER  LAB1_4                                                               05/12/2016 21:14:00 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   0007H   A   
+DELAY. . . . . . .  C ADDR   001BH   A   
+DONE . . . . . . .  C ADDR   000EH   A   
+HERE1. . . . . . .  C ADDR   001DH   A   
+HERE2. . . . . . .  C ADDR   001FH   A   
+HERE3. . . . . . .  C ADDR   0021H   A   
+LOOP . . . . . . .  C ADDR   0011H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

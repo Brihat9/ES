@@ -1,0 +1,4 @@
+vhdl isim_temp "../xor1.vhd"
+vhdl isim_temp "../full_adder.vhd"
+vhdl isim_temp "../add_sub_structural.vhd"
+vhdl isim_temp "../add_sub_tb.vhd"

@@ -1,0 +1,3 @@
+vhdl work "../mux2to1_dataflow.vhd"
+vhdl work "../mux4to1_structural.vhd"
+vhdl work "../mux2to1_tb.vhd"

@@ -1,0 +1,17 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY bcd_gray IS PORT (
+	X3,X2,X1,X0 : IN STD_LOGIC;
+	Y3,Y2,Y1,Y0 : OUT STD_LOGIC
+);
+END bcd_gray;
+
+ARCHITECTURE dataflow OF bcd_gray IS
+
+BEGIN
+	Y3 <= X3;
+	Y2 <= X2 XOR X3;
+	Y1 <= X1 XOR X2;
+	Y0 <= X0 XOR X1;
+END dataflow;

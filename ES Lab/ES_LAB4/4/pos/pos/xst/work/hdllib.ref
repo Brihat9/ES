@@ -1,0 +1,10 @@
+AR pos structural C:/Users/user/Desktop/ES_LAB4/4/pos/pos_structural.vhd sub00/vhpl09 1470324559
+AR not1 behavorial C:/Users/user/Desktop/ES_LAB4/4/pos/pos_not.vhd sub00/vhpl04 1470324553
+AR and1 behavorial C:/Users/user/Desktop/ES_LAB4/4/pos/pos_and.vhd sub00/vhpl06 1470324557
+AR or1 behavorial C:/Users/user/Desktop/ES_LAB4/4/pos/pos_or.vhd sub00/vhpl08 1470324555
+EN or1 NULL C:/Users/user/Desktop/ES_LAB4/4/pos/pos_or.vhd sub00/vhpl07 1470324554
+AR pos dataflow C:/Users/user/Desktop/ES_LAB4/4/pos/pos_dataflow.vhd sub00/vhpl01 1470323206
+EN not1 NULL C:/Users/user/Desktop/ES_LAB4/4/pos/pos_not.vhd sub00/vhpl03 1470324552
+AR pos behavorial C:/Users/user/Desktop/ES_LAB4/4/pos/pos_behavorial.vhd sub00/vhpl02 1470323386
+EN and1 NULL C:/Users/user/Desktop/ES_LAB4/4/pos/pos_and.vhd sub00/vhpl05 1470324556
+EN pos NULL C:/Users/user/Desktop/ES_LAB4/4/pos/pos_structural.vhd sub00/vhpl00 1470324558

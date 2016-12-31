@@ -1,0 +1,6 @@
+AR add_sub structural C:/Users/user/Desktop/ES_LAB4/7/add_sub_structural.vhd sub00/vhpl05 1470194996
+AR xor1 dataflow C:/Users/user/Desktop/ES_LAB4/7/xor1.vhd sub00/vhpl01 1470194992
+EN xor1 NULL C:/Users/user/Desktop/ES_LAB4/7/xor1.vhd sub00/vhpl00 1470194991
+EN full_adder NULL C:/Users/user/Desktop/ES_LAB4/7/full_adder.vhd sub00/vhpl02 1470194993
+AR full_adder dataflow C:/Users/user/Desktop/ES_LAB4/7/full_adder.vhd sub00/vhpl03 1470194994
+EN add_sub NULL C:/Users/user/Desktop/ES_LAB4/7/add_sub_structural.vhd sub00/vhpl04 1470194995

@@ -1,0 +1,2 @@
+vhdl isim_temp "../../../3/func_behavioral.vhd"
+vhdl isim_temp "../../../3/func_tb.vhd"

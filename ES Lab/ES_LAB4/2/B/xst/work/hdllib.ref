@@ -1,0 +1,12 @@
+EN bcd_gray NULL C:/Users/user/Desktop/ES_LAB4/2/bcd_gray_structural.vhd sub00/vhpl04 1470201362
+AR bcd_gray behavorial C:/Users/user/Desktop/ES_LAB4/2/bcd_gray_behavorial.vhd sub00/vhpl06 1470191957
+AR xor1 dataflow C:/Users/user/Desktop/ES_LAB4/2/xor1.vhd sub00/vhpl01 1470200434
+EN xor1 NULL C:/Users/user/Desktop/ES_LAB4/2/xor1.vhd sub00/vhpl00 1470200433
+AR bcd_gray structural C:/Users/user/Desktop/ES_LAB4/2/bcd_gray_structural.vhd sub00/vhpl07 1470201363
+EN small_ckt NULL C:/Users/user/Desktop/ES_LAB4/2/small_ckt_behavorial.vhd sub00/vhpl02 1470155252
+AR bcd_gray dataflow C:/Users/user/Desktop/ES_LAB4/2/bcd_gray_dataflow.vhd sub00/vhpl05 1470191271
+AR xor_nor behavorial C:/Users/user/Desktop/ES_LAB4/2/xor_nor.vhd sub00/vhpl11 1470201361
+EN xor_nor NULL C:/Users/user/Desktop/ES_LAB4/2/xor_nor.vhd sub00/vhpl10 1470201360
+AR small_ckt behavorial C:/Users/user/Desktop/ES_LAB4/2/small_ckt_behavorial.vhd sub00/vhpl03 1470155253
+EN nor1 NULL C:/Users/user/Desktop/ES_LAB4/2/nor1.vhd sub00/vhpl08 1470201162
+AR nor1 dataflow C:/Users/user/Desktop/ES_LAB4/2/nor1.vhd sub00/vhpl09 1470201163

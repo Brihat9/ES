@@ -1,0 +1,32 @@
+; divide AF H by 12 H using successive subtraction
+
+		ORG 00H
+		
+		MOV 3EH,#0AFH
+		
+		MOV A,3EH
+		MOV R4,#0H
+		
+AGAIN:	SUBB A,#12H
+		JC DONE
+		INC R4
+		AJMP AGAIN
+DONE:	ADD A,#12H
+		MOV R5,A
+		
+LOOP:	MOV P0,R4
+		ACALL DELAY
+		MOV P0,R5
+		ACALL DELAY
+		AJMP LOOP
+
+DELAY: 	MOV R1,#7
+HERE1:	MOV R2,#255
+HERE2: 	MOV R3,#255
+HERE3:	DJNZ R3,HERE3
+		DJNZ R2,HERE2
+		DJNZ R1,HERE1
+		RET
+		
+		END
+		

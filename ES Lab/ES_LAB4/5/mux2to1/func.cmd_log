@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "C:/Users/user/Desktop/ES_LAB4/5/e/mux2to1/func.xst" -ofn "C:/Users/user/Desktop/ES_LAB4/5/e/mux2to1/func.syr" 

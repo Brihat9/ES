@@ -1,0 +1,72 @@
+C51 COMPILER V9.50a   LAB3EX3                                                              07/28/2016 18:51:23 PAGE 1   
+
+
+C51 COMPILER V9.50a, COMPILATION OF MODULE LAB3EX3
+OBJECT MODULE PLACED IN lab3ex3.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE ES_LAB3\ES_LAB3_C\lab3ex3.c BROWSE DEBUG OBJECTEXTEND PRINT(.\lab3ex3.lst) 
+                    -TABS(2) OBJECT(lab3ex3.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          unsigned char led_pattern[10] = { 0x3f, 0x06, 0x5b, 0x4f, 0x66, 0x6d, 0x7d, 0x07, 0x7f, 0x6f};
+   3          
+   4          void delay(void)
+   5          {
+   6   1        TMOD = 0x01;
+   7   1        TH0 = 0xE9;
+   8   1        TL0 = 0x0E;
+   9   1        TR0 = 1;
+  10   1        while (!TF0);
+  11   1        TR0 = 0;
+  12   1        TF0 = 0;
+  13   1      }
+  14          
+  15          void display(int min, int sec)
+  16          {
+  17   1        int i, r, led[4];
+  18   1        
+  19   1        led[0] = min / 10;
+  20   1        led[1] = min % 10;
+  21   1        led[2] = sec / 10;
+  22   1        led[3] = sec % 10;
+  23   1        
+  24   1        for(r = 0; r < 39; r++)
+  25   1        {
+  26   2          P2 = 0x01;
+  27   2          for(i = 0; i < 4; i++)
+  28   2          {
+  29   3            if(i == 1)
+  30   3              P0 = led_pattern[led[i]] | 0x80;
+  31   3            else
+  32   3              P0 = led_pattern[led[i]];
+  33   3              delay();
+  34   3              P2 <<= 1;
+  35   3          }
+  36   2        }
+  37   1      }
+  38          
+  39          void main(void)
+  40          {
+  41   1        int i,j;
+  42   1        while(1)
+  43   1          for(i = 0; i < 60; i++)
+  44   1            for(j = 0;j < 60; j++)
+  45   1              display(i,j);
+  46   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    223    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     10      12
+C51 COMPILER V9.50a   LAB3EX3                                                              07/28/2016 18:51:23 PAGE 2   
+
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

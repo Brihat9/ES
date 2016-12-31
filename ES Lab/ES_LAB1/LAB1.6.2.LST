@@ -1,0 +1,103 @@
+A51 MACRO ASSEMBLER  LAB1_6_2                                                             05/17/2016 19:52:30 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN LAB1.6.2.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE LAB1.6.2.ASM SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; arrange given data in descending order implementing selecction sort algoriothm
+0000                   2                     ORG 00H
+                       3     
+                       4     ; GIVEN DATA
+0000 7560A5            5                     MOV 60H,#0A5H
+0003 7561FD            6                     MOV 61H,#0FDH
+0006 756267            7                     MOV 62H,#67H
+0009 756342            8                     MOV 63H,#42H
+000C 7564DF            9                     MOV 64H,#0DFH
+000F 75659A           10                     MOV 65H,#9AH
+0012 756684           11                     MOV 66H,#84H
+0015 75671B           12                     MOV 67H,#1BH
+0018 7568C7           13                     MOV 68H,#0C7H
+001B 756931           14                     MOV 69H,#31H
+                      15                     
+                      16     ; MAIN ROUTINE
+001E 7860             17                     MOV R0,#60H ;base address
+0020 7E09             18                     MOV R6,#09H ;counter = no of given data - 1
+0022 1136             19     AGN:    ACALL F_LARGE
+0024 F6               20                     MOV @R0,A
+0025 08               21                     INC R0
+0026 DEFA             22                     DJNZ R6,AGN
+                      23     
+                      24     ; DISPLAY SORTED LIST
+0028 790A             25     AGAIN:  MOV R1,#0AH
+002A 7860             26                     MOV R0,#60H
+002C E6               27     LOOP:   MOV A,@R0
+002D F580             28                     MOV P0,A
+002F 114B             29                     ACALL DELAY
+0031 08               30                     INC R0
+0032 D9F8             31                     DJNZ R1,LOOP
+0034 0128             32                     AJMP AGAIN
+                      33                     
+                      34     ; SELECTION SORT ALGORITHM              
+0036 88F0             35     F_LARGE:MOV B,R0
+0038 EE               36                     MOV A,R6 ;COUNTER MAIN
+0039 FA               37                     MOV R2,A ;COUNTER 2
+                      38             
+003A E6               39                     MOV A,@R0
+003B F9               40                     MOV R1,A ;R1 HOLDS LARGEST VALUE
+                      41                     
+003C 08               42     NEXT:   INC R0
+003D FC               43                     MOV R4,A ;save A
+003E 96               44                     SUBB A,@R0
+003F 5004             45                     JNC SKIP
+                      46                     
+0041 E6               47                     MOV A,@R0 ;ACC=LARGEST NOW
+0042 F9               48                     MOV R1,A;R1=LARGEST NOW
+0043 EC               49                     MOV A,R4
+0044 F6               50                     MOV @R0,A;XCHG A AND @R0
+                      51                     
+0045 E9               52     SKIP:   MOV A,R1;ACC- LARGEST
+0046 DAF4             53                     DJNZ R2,NEXT
+0048 A8F0             54                     MOV R0,B
+004A 22               55                     RET
+                      56     
+                      57     ; DELAY ROUTINE
+004B 7B07             58     DELAY:  MOV R3,#7
+A51 MACRO ASSEMBLER  LAB1_6_2                                                             05/17/2016 19:52:30 PAGE     2
+
+004D 7CFF             59     HERE1:  MOV R4,#255
+004F 7DFF             60     HERE2:  MOV R5,#255
+0051 DDFE             61     HERE3:  DJNZ R5,HERE3
+0053 DCFA             62                     DJNZ R4,HERE2
+0055 DBF6             63                     DJNZ R3,HERE1
+0057 22               64                     RET
+                      65                     
+                      66                     END
+A51 MACRO ASSEMBLER  LAB1_6_2                                                             05/17/2016 19:52:30 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   0028H   A   
+AGN. . . . . . . .  C ADDR   0022H   A   
+B. . . . . . . . .  D ADDR   00F0H   A   
+DELAY. . . . . . .  C ADDR   004BH   A   
+F_LARGE. . . . . .  C ADDR   0036H   A   
+HERE1. . . . . . .  C ADDR   004DH   A   
+HERE2. . . . . . .  C ADDR   004FH   A   
+HERE3. . . . . . .  C ADDR   0051H   A   
+LOOP . . . . . . .  C ADDR   002CH   A   
+NEXT . . . . . . .  C ADDR   003CH   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+SKIP . . . . . . .  C ADDR   0045H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

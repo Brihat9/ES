@@ -1,0 +1,2 @@
+vhdl work "../../../3/func_behavioral.vhd"
+vhdl work "../../../3/func_tb.vhd"

@@ -1,0 +1,73 @@
+A51 MACRO ASSEMBLER  LAB2_1                                                               05/24/2016 21:30:43 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN .\LAB2.1.obj
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE C:\Users\user\Desktop\LAB2.1.ASM SET(SMALL) DEBUG PRINT(.\LAB2.1.lst) OBJE
+                      CT(.\LAB2.1.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1                     ORG 00H
+                       2                     
+0000 75403F            3                     MOV 40H,#03FH
+0003 754106            4                     MOV 41H,#06H
+0006 75425B            5                     MOV 42H,#5BH
+0009 75434F            6                     MOV 43H,#4FH
+000C 754466            7                     MOV 44H,#66H
+000F 75456D            8                     MOV 45H,#6DH
+0012 75467D            9                     MOV 46H,#7DH
+0015 754707           10                     MOV 47H,#07H
+0018 75487F           11                     MOV 48H,#7FH
+001B 75496F           12                     MOV 49H,#6FH
+                      13                     
+001E 790F             14                     MOV R1,#0FH
+0020 89A0             15                     MOV P2,R1
+0022 7840             16     AGAIN:  MOV R0,#40H
+0024 7A0A             17                     MOV R2,#0AH
+0026 8680             18     C_INC:  MOV P0,@R0
+0028 08               19                     INC R0
+0029 1139             20                     ACALL DELAY
+002B DAF9             21                     DJNZ R2,C_INC
+002D 18               22                     DEC R0
+                      23                     
+002E 7A08             24                     MOV R2,#08H
+0030 18               25     C_DEC:  DEC R0
+0031 8680             26                     MOV P0,@R0
+0033 1139             27                     ACALL DELAY
+0035 DAF9             28                     DJNZ R2,C_DEC
+0037 0122             29                     AJMP AGAIN
+                      30                     
+0039 7B03             31     DELAY:  MOV R3,#3
+003B 7CFF             32     HERE1:  MOV R4,#255
+003D 7DFF             33     HERE2:  MOV R5,#255
+003F DDFE             34     HERE3:  DJNZ R5,HERE3
+0041 DCFA             35                     DJNZ R4,HERE2
+0043 DBF6             36                     DJNZ R3,HERE1
+0045 22               37                     RET
+                      38                     
+                      39                     END
+                                             
+A51 MACRO ASSEMBLER  LAB2_1                                                               05/24/2016 21:30:43 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   0022H   A   
+C_DEC. . . . . . .  C ADDR   0030H   A   
+C_INC. . . . . . .  C ADDR   0026H   A   
+DELAY. . . . . . .  C ADDR   0039H   A   
+HERE1. . . . . . .  C ADDR   003BH   A   
+HERE2. . . . . . .  C ADDR   003DH   A   
+HERE3. . . . . . .  C ADDR   003FH   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

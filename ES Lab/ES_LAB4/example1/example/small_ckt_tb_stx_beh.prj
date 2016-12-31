@@ -1,0 +1,5 @@
+vhdl isim_temp "../or_1.vhd"
+vhdl isim_temp "../and_2.vhd"
+vhdl isim_temp "../and_1.vhd"
+vhdl isim_temp "../small_ckt.vhd"
+vhdl isim_temp "../small_ckt_tb.vhd"

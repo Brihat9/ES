@@ -1,0 +1,18 @@
+V3 11
+FL C:/Users/user/Desktop/ES_LAB4/7/add_sub_structural.vhd 2016/08/03.09:06:50 P.28xd
+EN work/add_sub 1470194995 \
+      FL C:/Users/user/Desktop/ES_LAB4/7/add_sub_structural.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/add_sub/structural 1470194996 \
+      FL C:/Users/user/Desktop/ES_LAB4/7/add_sub_structural.vhd EN work/add_sub 1470194995 \
+      CP xor1 CP full_adder
+FL C:/Users/user/Desktop/ES_LAB4/7/full_adder.vhd 2016/08/03.08:55:43 P.28xd
+EN work/full_adder 1470194993 FL C:/Users/user/Desktop/ES_LAB4/7/full_adder.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/full_adder/dataflow 1470194994 \
+      FL C:/Users/user/Desktop/ES_LAB4/7/full_adder.vhd EN work/full_adder 1470194993
+FL C:/Users/user/Desktop/ES_LAB4/7/xor1.vhd 2016/08/02.21:51:45 P.28xd
+EN work/xor1 1470194991 FL C:/Users/user/Desktop/ES_LAB4/7/xor1.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/xor1/dataflow 1470194992 \
+      FL C:/Users/user/Desktop/ES_LAB4/7/xor1.vhd EN work/xor1 1470194991

@@ -1,0 +1,13 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY and1 IS PORT (
+	i1,i2: IN STD_LOGIC;
+	o1: OUT STD_LOGIC
+);
+END and1;
+
+ARCHITECTURE dataflow OF and1 IS
+BEGIN
+	o1 <= i1 AND i2;
+END dataflow;

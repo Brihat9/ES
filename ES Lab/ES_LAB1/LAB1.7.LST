@@ -1,0 +1,106 @@
+A51 MACRO ASSEMBLER  LAB1_7                                                               05/12/2016 19:59:42 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN LAB1.7.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE LAB1.7.ASM SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; find prime numbers between prime numbers
+                       2     ; INCOMPLETE , CONTAINS SEMANTIC ERROR
+                       3     
+0000                   4                     ORG 00H
+                       5                     
+0000 7840              6                     MOV R0,#40H
+0002 7400              7                     MOV A,#00H
+0004 F6                8     AGAIN:  MOV @R0,A
+0005 04                9                     INC A
+0006 08               10                     INC R0
+0007 F9               11                     MOV R1,A
+0008 9420             12                     SUBB A,#20H
+                      13     ;               JZ DONE
+000A 6003             14                     JZ DONE2
+000C E9               15                     MOV A,R1
+000D 0104             16                     AJMP AGAIN
+                      17                             
+                      18     ;DONE:  MOV R0,#40H
+                      19     ;DISPL: MOV A,@R0
+                      20     ;               MOV P0,A
+                      21     ;               ACALL DELAY
+                      22     ;               INC R0
+                      23     ;               AJMP DISPL
+                      24                     
+000F E542             25     DONE2:  MOV A,42H
+0011 F580             26                     MOV P0,A
+0013 113E             27                     ACALL DELAY
+0015 E543             28                     MOV A,43H
+0017 F580             29                     MOV P0,A
+0019 113E             30                     ACALL DELAY
+                      31     
+001B 7844             32                     MOV R0,#44H
+001D 791D             33                     MOV R1,#1DH ; TOTAL NO - 1 - 1 - 1 - 1 = TOTAL - 4
+001F 1126             34     NEXT:   ACALL PRIME     
+0021 08               35                     INC R0
+0022 D9FB             36                     DJNZ R1,NEXT
+0024 010F             37                     AJMP DONE2
+                      38             
+0026 E6               39     PRIME:  MOV A,@R0
+0027 FC               40                     MOV R4,A ; SAVE A
+                      41                     
+0028 7A02             42                     MOV R2,#02H
+002A EC               43     INC_B:  MOV A,R4
+002B 8AF0             44                     MOV B,R2                
+002D 84               45                     DIV AB
+                      46                     
+002E E5F0             47                     MOV A,B
+                      48                     
+0030 7001             49                     JNZ N_RET
+0032 22               50                     RET
+0033 0A               51     N_RET:  INC R2
+0034 EA               52                     MOV A,R2
+0035 96               53                     SUBB A,@R0
+0036 70F2             54                     JNZ INC_B
+0038 EC               55                     MOV A,R4
+0039 F580             56                     MOV P0,A
+003B 113E             57                     ACALL DELAY
+003D 22               58                     RET
+A51 MACRO ASSEMBLER  LAB1_7                                                               05/12/2016 19:59:42 PAGE     2
+
+                      59     
+003E 7F07             60     DELAY:  MOV R7,#7
+0040 7EFF             61     HERE1:  MOV R6,#255
+0042 7DFF             62     HERE2:  MOV R5,#255
+0044 DDFE             63     HERE3:  DJNZ R5,HERE3
+0046 DEFA             64                     DJNZ R6,HERE2
+0048 DFF6             65                     DJNZ R7,HERE1
+004A 22               66                     RET
+                      67                     
+                      68                     END
+                                             
+A51 MACRO ASSEMBLER  LAB1_7                                                               05/12/2016 19:59:42 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   0004H   A   
+B. . . . . . . . .  D ADDR   00F0H   A   
+DELAY. . . . . . .  C ADDR   003EH   A   
+DONE2. . . . . . .  C ADDR   000FH   A   
+HERE1. . . . . . .  C ADDR   0040H   A   
+HERE2. . . . . . .  C ADDR   0042H   A   
+HERE3. . . . . . .  C ADDR   0044H   A   
+INC_B. . . . . . .  C ADDR   002AH   A   
+NEXT . . . . . . .  C ADDR   001FH   A   
+N_RET. . . . . . .  C ADDR   0033H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+PRIME. . . . . . .  C ADDR   0026H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,57 @@
+A51 MACRO ASSEMBLER  LAB1_2                                                               05/24/2016 10:33:59 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN LAB1.2.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE LAB1.2.ASM SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; replacing SWAP using RR instruction
+0000                   2                     ORG 00H
+                       3                     
+0000 746B              4     AGAIN:  MOV A,#6BH
+0002 F580              5                     MOV P0,A
+0004 1113              6                     ACALL DELAY
+0006 110E              7                     ACALL SWAP_RR
+0008 F580              8                     MOV P0,A
+000A 1113              9                     ACALL DELAY
+000C 0100             10                     AJMP AGAIN
+                      11                     
+000E 03               12     SWAP_RR:RR A
+000F 03               13                     RR A
+0010 03               14                     RR A
+0011 03               15                     RR A
+0012 22               16                     RET
+                      17                     
+0013 7C07             18     DELAY:  MOV R4,#7
+0015 7DFF             19     HERE1:  MOV R5,#255
+0017 7FFF             20     HERE2:  MOV R7,#255
+0019 DFFE             21     HERE3:  DJNZ R7,HERE3
+001B DDFA             22                     DJNZ R5,HERE2
+001D DCF6             23                     DJNZ R4,HERE1
+001F 22               24                     RET
+                      25                     
+                      26                     END
+                                             
+A51 MACRO ASSEMBLER  LAB1_2                                                               05/24/2016 10:33:59 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   0000H   A   
+DELAY. . . . . . .  C ADDR   0013H   A   
+HERE1. . . . . . .  C ADDR   0015H   A   
+HERE2. . . . . . .  C ADDR   0017H   A   
+HERE3. . . . . . .  C ADDR   0019H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+SWAP_RR. . . . . .  C ADDR   000EH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

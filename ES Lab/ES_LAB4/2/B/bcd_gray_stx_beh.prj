@@ -1,0 +1,2 @@
+vhdl isim_temp "../xor1.vhd"
+vhdl isim_temp "../bcd_gray_structural.vhd"
